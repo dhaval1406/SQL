@@ -6,7 +6,8 @@
 2) What is the difference between JOIN and UNION?
 
 	- SQL JOIN allows us to “lookup” records on other table based on the given conditions between two tables. 
-	- UNION operation allows us to add 2 similar data sets to create resulting data set that contains all the data from the source data sets. Union does not require any condition for joining.
+	- UNION operation allows us to add 2 similar data sets to create resulting data set that contains
+          all the data from the source data sets. Union does not require any condition for joining.
 	
 3) What is the difference between UNION and UNION ALL?	
 	- UNION operation returns only the unique records from the resulting data set  
@@ -18,7 +19,8 @@
 	
 5) What is the difference among UNION, MINUS and INTERSECT?
 	- UNION combines the results from 2 tables and eliminates duplicate records from the result set.
-	- MINUS operator when used between 2 tables, gives us all the rows from the first table except the rows which are present in the second table.
+	- MINUS operator when used between 2 tables, gives us all the rows from the first table except 
+          the rows which are present in the second table.
 	- INTERSECT operator returns us only the matching or common rows between 2 result sets.
 	
 6) How can we transpose a table using SQL (changing rows to column or vice-versa) ?
@@ -47,7 +49,12 @@
 	
 12) Describe the difference between truncate and delete 
 	Delete command removes the rows from a table based on the condition that we provide with a WHERE clause. 
-	Truncate will actually remove all the rows from a table and there will be no data in the table after we run the truncate command.
+	Truncate will actually remove all the rows from a table and there will be no data in the table after 
+        we run the truncate command.
+        Where clause can be use in Delete statement whereas we cannot use where clause in Truncate.
+        Truncate delete all the rows in the table which can't be revoked whereas Delete will remove rows based on where       
+        conditions.
+        If there is no where condition in delete statement it will remove all the records in the table.
 	
 13) What is a view?
 	A view is simply a virtual table that is made up of elements of multiple physical or “real” tables. Views are most commonly used to join multiple tables together, or control access to any tables existing in background server processes.	
@@ -64,10 +71,9 @@
 	A PRIMARY KEY constraint is a unique identifier for a row within a database table. Every table should have a primary key constraint to uniquely identify each row and only one primary key constraint can be created for each table. The primary key constraints are used to enforce entity integrity.
 	
 17) What is FOREIGN KEY?
-
 	A FOREIGN KEY constraint prevents any actions that would destroy links between tables with the corresponding data values. A foreign key in one table points to a primary key in another table. Foreign keys prevent actions that would leave rows with foreign key values when there are no primary keys with that value. The foreign key constraints are used to enforce referential integrity.
 	
-	16) What's the difference between a primary key and a unique key?
+16) What's the difference between a primary key and a unique key?
 	Both primary key and unique key enforces uniqueness of the column on which they are defined. 
 	But by default primary key creates a clustered index on the column, where are unique creates a non-clustered index by default. 
 	Another major difference is that, primary key doesn't allow NULLs, but unique key allows one NULL only.	
@@ -79,3 +85,33 @@
 	Stored procedures can encapsulate logic. You can change stored procedure code without affecting clients.
 	Stored procedures provide better security to your data.	
 	
+19) What is SQL?
+        •SQL stands for Structured Query Language.
+        •Basically SQL is like commands in simple English which provides you with ways to communicate with 
+         relational databases like MS SQL Server, Oracle server and MySQL.
+
+20) What is the order of execution of group by, order by, where and having?
+         •The order of execution is where, group by, having and then order by.
+
+21) Difference between SQL and PL/SQL?
+        SQL is not a programming language but PL/SQL is the procedural language. PL/SQL is the enhanced form of SQL. 
+        In PL/SQL, we can perform loop and conditional statements. PL/SQL was developed by Oracle
+
+22) What is CTE (Common Table Expression)?
+        CTE stands for Common Table Expression. CTE is like a temp table which will create in our current 
+        working database. The major advantage of CTE is to do recursive programming. 
+
+23) What is the difference between CTE and Temptable?
+       CTE will create in current working database and temp table creates in temp DB. 
+       You cannot able to do index on CTE table. You can do index in temp table.
+       Temp table is preferable than CTE.  
+       CTE will not be available in consecutive query but temp table will be available in entire connection.
+
+24) Can we use user defined functions in select statements?
+        yes, we can use user defined functions in select statements.
+
+25) can we use DML statements in user defined functions?
+        No, we can't able to use DML statements in functions.
+
+26) What is Composite key?
+        Composite key is the combination of two or more column in a table which make each row in a table unique.
