@@ -39,13 +39,21 @@
 			   
 ======================= SQL server questions ==========================================
 9) What are DMVs? - 
-	Dynamic Management Views (DMVs), are functions that give you information on the state of the server. DMVs, for the most part, are used to monitor the health of a server. They really just give you a snapshot of what’s going on inside the server. They let you monitor the health of a server instance, troubleshoot major problems and tune the server to increase performance			   
+	Dynamic Management Views (DMVs), are functions that give you information on the state of the server. DMVs, 
+	for the most part, are used to monitor the health of a server. They really just give you a snapshot of what’s
+	going on inside the server. 
+	They let you monitor the health of a server instance, troubleshoot major problems and tune the server to increase performance			   
 
 10) Define a temp table 
-	In a nutshell, a temp table is a temporary storage structure. What does that mean? Basically, you can use a temp table to store data temporarily so you can manipulate and change it before it reaches its destination format.	
+	In a nutshell, a temp table is a temporary storage structure. What does that mean? Basically,
+	you can use a temp table to store data temporarily so you can manipulate and change it
+	before it reaches its destination format.	
 	
 11) What’s the difference between a local  temp table and a global temp table? 
-	Local tables are accessible to a current user connected to the server. These tables disappear once the user has disconnected from the server. Global temp tables, on the other hand, are available to all users regardless of the connection. These tables stay active until all the global connections are closed.
+	Local tables are accessible to a current user connected to the server. These tables disappear once the 
+	user has disconnected from the server. Global temp tables, on the other hand, are available to all users regardless
+	of the connection. 
+	These tables stay active until all the global connections are closed.
 	
 12) Describe the difference between truncate and delete 
 	Delete command removes the rows from a table based on the condition that we provide with a WHERE clause. 
@@ -57,21 +65,32 @@
         If there is no where condition in delete statement it will remove all the records in the table.
 	
 13) What is a view?
-	A view is simply a virtual table that is made up of elements of multiple physical or “real” tables. Views are most commonly used to join multiple tables together, or control access to any tables existing in background server processes.	
+	A view is simply a virtual table that is made up of elements of multiple physical or “real” tables. 
+	Views are most commonly used to join multiple tables together, or control access to any tables existing 
+	in background server processes.	
 	
 14) What is the default port number for SQL Server? -
-	Basically, when SQL Server is enabled the server instant listens to the TCP port 1433.	It can be changed from the Network Utility TCP/IP properties.
+	Basically, when SQL Server is enabled the server instant listens to the TCP port 1433.	
+	It can be changed from the Network Utility TCP/IP properties.
 
 15) What are the difference between clustered and a non-clustered index?
-	A clustered index is a special type of index that reorders the way records in the table are physically stored. Therefore table can have only one clustered index. The leaf nodes of a clustered index contain the data pages.
+	A clustered index is a special type of index that reorders the way records in the table are physically stored.
+	Therefore table can have only one clustered index. The leaf nodes of a clustered index contain the data pages.
 	
-	A non clustered index is a special type of index in which the logical order of the index does not match the physical stored order of the rows on disk. The leaf node of a non clustered index does not consist of the data pages. Instead, the leaf nodes contain index rows.
+	A non clustered index is a special type of index in which the logical order of the index does not match the physical 
+	stored order of the rows on disk. The leaf node of a non clustered index does not consist of the data pages. 
+	Instead, the leaf nodes contain index rows.
 	
 16) What is PRIMARY KEY?
-	A PRIMARY KEY constraint is a unique identifier for a row within a database table. Every table should have a primary key constraint to uniquely identify each row and only one primary key constraint can be created for each table. The primary key constraints are used to enforce entity integrity.
+	A PRIMARY KEY constraint is a unique identifier for a row within a database table. 
+	Every table should have a primary key constraint to uniquely identify each row and only one primary key 
+	constraint can be created for each table. The primary key constraints are used to enforce entity integrity.
 	
 17) What is FOREIGN KEY?
-	A FOREIGN KEY constraint prevents any actions that would destroy links between tables with the corresponding data values. A foreign key in one table points to a primary key in another table. Foreign keys prevent actions that would leave rows with foreign key values when there are no primary keys with that value. The foreign key constraints are used to enforce referential integrity.
+	A FOREIGN KEY constraint prevents any actions that would destroy links between tables with the corresponding data values.
+	A foreign key in one table points to a primary key in another table. Foreign keys prevent actions that would 
+	leave rows with foreign key values when there are no primary keys with that value.
+	The foreign key constraints are used to enforce referential integrity.
 	
 16) What's the difference between a primary key and a unique key?
 	Both primary key and unique key enforces uniqueness of the column on which they are defined. 
