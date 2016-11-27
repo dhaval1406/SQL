@@ -39,21 +39,13 @@
 			   
 ======================= SQL server questions ==========================================
 9) What are DMVs? - 
-	Dynamic Management Views (DMVs), are functions that give you information on the state of the server. DMVs, 
-	for the most part, are used to monitor the health of a server. They really just give you a snapshot of what’s
-	going on inside the server. 
-	They let you monitor the health of a server instance, troubleshoot major problems and tune the server to increase performance			   
+	Dynamic Management Views (DMVs), are functions that give you information on the state of the server. DMVs, for the most part, are used to monitor the health of a server. They really just give you a snapshot of what’s going on inside the server. They let you monitor the health of a server instance, troubleshoot major problems and tune the server to increase performance			   
 
 10) Define a temp table 
-	In a nutshell, a temp table is a temporary storage structure. What does that mean? Basically,
-	you can use a temp table to store data temporarily so you can manipulate and change it
-	before it reaches its destination format.	
+	In a nutshell, a temp table is a temporary storage structure. What does that mean? Basically, you can use a temp table to store data temporarily so you can manipulate and change it before it reaches its destination format.	
 	
 11) What’s the difference between a local  temp table and a global temp table? 
-	Local tables are accessible to a current user connected to the server. These tables disappear once the 
-	user has disconnected from the server. Global temp tables, on the other hand, are available to all users regardless
-	of the connection. 
-	These tables stay active until all the global connections are closed.
+	Local tables are accessible to a current user connected to the server. These tables disappear once the user has disconnected from the server. Global temp tables, on the other hand, are available to all users regardless of the connection. These tables stay active until all the global connections are closed.
 	
 12) Describe the difference between truncate and delete 
 	Delete command removes the rows from a table based on the condition that we provide with a WHERE clause. 
@@ -65,32 +57,21 @@
         If there is no where condition in delete statement it will remove all the records in the table.
 	
 13) What is a view?
-	A view is simply a virtual table that is made up of elements of multiple physical or “real” tables. 
-	Views are most commonly used to join multiple tables together, or control access to any tables existing 
-	in background server processes.	
+	A view is simply a virtual table that is made up of elements of multiple physical or “real” tables. Views are most commonly used to join multiple tables together, or control access to any tables existing in background server processes.	
 	
 14) What is the default port number for SQL Server? -
-	Basically, when SQL Server is enabled the server instant listens to the TCP port 1433.	
-	It can be changed from the Network Utility TCP/IP properties.
+	Basically, when SQL Server is enabled the server instant listens to the TCP port 1433.	It can be changed from the Network Utility TCP/IP properties.
 
 15) What are the difference between clustered and a non-clustered index?
-	A clustered index is a special type of index that reorders the way records in the table are physically stored.
-	Therefore table can have only one clustered index. The leaf nodes of a clustered index contain the data pages.
+	A clustered index is a special type of index that reorders the way records in the table are physically stored. Therefore table can have only one clustered index. The leaf nodes of a clustered index contain the data pages.
 	
-	A non clustered index is a special type of index in which the logical order of the index does not match the physical 
-	stored order of the rows on disk. The leaf node of a non clustered index does not consist of the data pages. 
-	Instead, the leaf nodes contain index rows.
+	A non clustered index is a special type of index in which the logical order of the index does not match the physical stored order of the rows on disk. The leaf node of a non clustered index does not consist of the data pages. Instead, the leaf nodes contain index rows.
 	
 16) What is PRIMARY KEY?
-	A PRIMARY KEY constraint is a unique identifier for a row within a database table. 
-	Every table should have a primary key constraint to uniquely identify each row and only one primary key 
-	constraint can be created for each table. The primary key constraints are used to enforce entity integrity.
+	A PRIMARY KEY constraint is a unique identifier for a row within a database table. Every table should have a primary key constraint to uniquely identify each row and only one primary key constraint can be created for each table. The primary key constraints are used to enforce entity integrity.
 	
 17) What is FOREIGN KEY?
-	A FOREIGN KEY constraint prevents any actions that would destroy links between tables with the corresponding data values.
-	A foreign key in one table points to a primary key in another table. Foreign keys prevent actions that would 
-	leave rows with foreign key values when there are no primary keys with that value.
-	The foreign key constraints are used to enforce referential integrity.
+	A FOREIGN KEY constraint prevents any actions that would destroy links between tables with the corresponding data values. A foreign key in one table points to a primary key in another table. Foreign keys prevent actions that would leave rows with foreign key values when there are no primary keys with that value. The foreign key constraints are used to enforce referential integrity.
 	
 16) What's the difference between a primary key and a unique key?
 	Both primary key and unique key enforces uniqueness of the column on which they are defined. 
@@ -130,7 +111,68 @@
         yes, we can use user defined functions in select statements.
 
 25) can we use DML statements in user defined functions?
-        No, we can't able to use DML statements in functions.
+        No, we can't able to use DML statements in functions. We can only able to use select statement in a function.
 
 26) What is Composite key?
         Composite key is the combination of two or more column in a table which make each row in a table unique.
+
+27) What are Triggers?
+		Triggers are the special stored procedure which executes automatically when insert, update, delete operation happens on the table. Triggers will reduce the db performance.
+
+28) Can we use a function in select statement?
+	yes, we can use function in select statement. We can write some complex queries to a function and refer it in where condition of a query which will improve the performance of your query.
+	
+29)What is subquery?
+	subquery are the query within a query.
+	subquery executes first and then the outer query will executes. Based on the results of the subquery,  outer query will perform.
+		ex: select empname from emp where locationid = (select locationid from location where location = 'Chennai')
+		
+30) what are the disadvantages of subquery?
+	subquery reduces the performance of the query. It's always advisable to use joins instead of subquery.
+	
+31) how to retrieve data based on a pattern match?
+	we can use 'like' to do pattern match
+	ex: select empname from  employee where empname like 'bal%'
+	
+	Since percentage symbol is at-last, it will retrieve data starts with bal. If I pust '%' at first position, the query will retrieve data ends with bal.
+	Similarly we can also use the percentile '%' symbol at middle.
+
+32) difference between Truncate and Drop?
+	Truncate will remove all the records in a table and the table structure remains unchanged.
+	Drop will remove the table from the database. both the commands can't be roll-back.
+	
+33) how to add a column to an existing table?
+	alter table emp add address varchar(100);
+
+34) how to delete a column to an existing table?
+	alter table emp drop column address 
+	
+35) what is default constraint?
+	default constraint are set at column level. this constraint will set the default value to the record if we haven't provided the data for that particular column on which the default constraint sets.
+	
+	ex: alter table emp alter column salary set default '10000'
+	
+	the  above query will set the default emp salary to 10000. when you adding a new employee to table the default value to salary column in 10000.
+
+36) what is check constraint?
+	Check constraint used to check for some condition before the value get inserted into an column.
+	the check constraint works like a "IF" condition in programming. It limits the data range.
+	
+	ex: alter table emp add constraint chk check age<40;
+	
+	the above query let you to insert data in age column only when the age is lesser than 40.
+	
+37) what is not null constraint?
+	if the column is set to not null constraint, then the column must have value it won't accept null value.
+	
+38) what is unique constraint?
+	unique constraint make sure that each row of a column must have a unique value that make the record unique.
+	
+39) how to declare a variable in sql server/
+	declare @my_var varchar(10) = null
+	
+	in the above line, I've declared a variable called @my_var which is of type varchar which has 10 byte of memory and I set default to null.
+	
+40) what are the mode of authentications in SQL server?
+	Windows authentications and SQL server authentications.
+	
