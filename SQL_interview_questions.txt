@@ -1,5 +1,4 @@
 1) What is the difference between inner and outer join? Explain with example.
-
 	- Inner join returns rows when there is at least one match in both tables
 	- Outer join will return matching rows from both tables as well as any unmatched rows from one or both the tables 
 	
@@ -25,6 +24,7 @@
 	
 6) How can we transpose a table using SQL (changing rows to column or vice-versa) ?
 	- The usual way to do it in SQL is to use CASE statement or DECODE statement
+	- also we can use pivot to do so.
 	
 7) How to generate row number in SQL Without ROWNUM
 	- SELECT name, sal, (SELECT COUNT(*)  FROM EMPLOYEE i WHERE o.name >= i.name) row_num
@@ -120,7 +120,7 @@
 		Triggers are the special stored procedure which executes automatically when insert, update, delete operation happens on the table. Triggers will reduce the db performance.
 
 28) Can we use a function in select statement?
-	yes, we can use function in select statement. We can write some complex queries to a function and refer it in where condition of a query which will improve the performance of your query.
+	yes, we can use function in select statement. We can write some complex queries to a function and refer it in where condition of a query which will improve the performance of your query. which also reduces the duplication of te query
 	
 29)What is subquery?
 	subquery are the query within a query.
@@ -159,7 +159,6 @@
 	the check constraint works like a "IF" condition in programming. It limits the data range.
 	
 	ex: alter table emp add constraint chk check age<40;
-	
 	the above query let you to insert data in age column only when the age is lesser than 40.
 	
 37) what is not null constraint?
@@ -175,4 +174,88 @@
 	
 40) what are the mode of authentications in SQL server?
 	Windows authentications and SQL server authentications.
+
+41) What is database lock?
+	database locks are applied on table's data level we can  using a transaction to avoid such a situation of accessing same data by two different users.
+		
+42) What are te types of database lock?
+	there are two types of database lock.
+		1) Shared lock
+			shared lock is also called as read lock. when two users concurrently access the same record only one user can able to edit the record 
+			and other user can only able to read (which is in read only mode) the data.
+		2) Exclusive lock
+				when execusive lock is applied on a data. that can't be edit or view by any other transactions.
+				
+43) What is transaction and when to use it?
+		* A transaction is a set of statements. transaction passess when all the statements are passed otherwise fails totally. 
+		* if any statement in the trasactions get failed, then previously DB affected changes are get rollback to it's original position.
+		* a trasaction can use when two different works are going to heppen one by one. consider an example, transferring mony from one account to another account.
+		ex: 
+			begin try	
+				begin transaction
+					--A set of statements
+				commit	
+			end try
+			begin catch	
+				rollback
+			end catch
+			
+44) what is acid property?
+	the most important interview question is ACID property in transaction.
+	Atomic: the transaction should pass or fail in whole. it won't be in half done
+	Consistency: 
+	Isolation: one transaction should not interact / disturb another transation.
+	Durability: once after the successfull transaction data in all the table should be related. once after fail, the tables data should revert ack to it's original states.
 	
+45) what is nested trasaction?
+	a separate transaction present inside another transaction.
+	ex: 
+			begin try	
+				-- outer transaction
+				begin transaction 
+					--A set of statements
+					-- transaction inside another trasaction
+					begin transaction
+						-- set of statements
+					commit transaction
+				commit	
+			end try
+			begin catch	
+				rollback
+			end catch
+			
+46) what is COALESCE function?
+		Coalesce function return the first not null value of the column referred in select query.
+		
+47) how to use case in query?
+		we can use case statement in select query.
+		ex: select case when column_name is null then 'A' else 'B' end as some_query from sampletable
+		
+48) can we use case in DML statements?
+		No, we can't able to use CASE statement in DML queries 
+		
+49) what is natural join?
+		natural join will not comes under common join types. It's works based on the common column present within the two tables with same datatype.
+		
+50) what is cross join?
+		when joining two table if we havnt provided any where condition, then it will return the product of the two tables. Cross join is also called as cartesian join.
+		ex: we we join two tables called table a and table b. table a has 3 column and table b has 120 column. Then the cross join will provide output like 3 * 120  = 360 rows.
+		
+51) what is difference between left outer join and right outer join?
+		* left outer join and right outer join are the types of outer join.
+		* left join will return all the record from the left table and only the matched record from the right table. likewise, right outer join return all record from right table and only the matched record from the left table.
+		
+52)	will the truncate and drop table command can revoke?
+		No, this operations can't be revoked.
+		
+53) What is full outer join?
+		all the records from both the right and left table gets returned even if there is no match record.
+
+54) what are the different types of pattern matches?
+		* we have seen pattern match with like 
+		* we can use '_' (underscore) for single character search.
+			ex: select name from sites where sitename like '_uvi%'
+		* 	we can use charlist to search multiple 
+			ex: select city from states where statename like '[cba]%'
+			
+55) 
