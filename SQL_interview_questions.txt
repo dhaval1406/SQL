@@ -255,7 +255,20 @@
 		* we have seen pattern match with like 
 		* we can use '_' (underscore) for single character search.
 			ex: select name from sites where sitename like '_uvi%'
-		* 	we can use charlist to search multiple 
+		* 	we can use charlist to search multiple datas.
 			ex: select city from states where statename like '[cba]%'
 			
-55) 
+55) What is Sequel?, What is SQL?, and what is the difference/
+		* SQL and Sequel are same.
+		* Sequel is the earlier name of SQL. But, still we can see many people's are using this name.
+		* Sequel name changed to SQL by removing the vowels. Because, an aircraft company  registered sequel as trademark.
+
+56) How a Sql query gets executes?
+		when a sql query is given to server, the parser receives it then parse the query and then te parsed query will send to optimizer to create a execution plan.
+		based on the execution plan, the SQL query gets executes and the result set will produce.
+		
+		NOTE: the main work of the parser is to check the SQL query syntatically with the SQL grammer rules and also allocate space in memory to execute the query.
+		
+57) What is stored procedures?
+		* stored procedure is a batch of scripts which gets executes at a time.
+		* 
