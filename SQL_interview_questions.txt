@@ -271,4 +271,15 @@
 		
 57) What is stored procedures?
 		* stored procedure is a batch of scripts which gets executes at a time.
-		* 
+		* stored procedure accepts input parameters.
+		* SP increases the performance. Because once the stored procedure was successfully compiled an execution plan also get prepared. each time when we call the SP, it won't compile again until and unless the SP gets changed.
+		
+58) What are the types of Stored Procedures?
+		* there are four types of stored procedure
+			* system defined strored procedure
+			* user defined stored procedure
+			* extended stored procedure
+			* CLR stored Procedure
+59) what is system stored procedure and user defined stored procedure?
+60) what is extended stored procedure?
+61) what is CLR stored Procedure?
