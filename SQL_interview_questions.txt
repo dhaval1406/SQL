@@ -273,6 +273,8 @@
 		* stored procedure is a batch of scripts which gets executes at a time.
 		* stored procedure accepts input parameters.
 		* SP increases the performance. Because once the stored procedure was successfully compiled an execution plan also get prepared. each time when we call the SP, it won't compile again until and unless the SP gets changed.
+		* SP nesting level is limited to 32 
+		* but we can use as many number of stored procedure as you want.
 		
 58) What are the types of Stored Procedures?
 		* there are four types of stored procedure
@@ -293,8 +295,21 @@
 			 end
 			 
 60) what is extended stored procedure?
+		 * extended stored procedures are starts with xp_ as prefix. It provide an interface with external programs. this extended stored procedures are stored under master database. ex: program from C program.
 		 
+		 NOTE: Microsoft likely to remove the extended stored procedure. instead they let us to use CLR stored procedure.
 		
 61) what is CLR stored Procedure?
 		* The CLR stored procedures are CLR supported. the procedures can be written in any of the .net supported programming languages like C#, VB, F#. 	
 		* The method should be public static. if the return type is void then default return to 0.
+		
+62) What is recursive stored procedure?
+		* a stored procedure gets called again again untill the desired output obtain. Default recursive is deactivated 
+		
+63) can we return null values from SP?
+		* we cant able to return null values from SP instead we can return 0.
+		
+64) can we use output variable in SP?
+		* yes, we can use.
+	
+65) 
