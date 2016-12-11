@@ -312,4 +312,8 @@
 64) can we use output variable in SP?
 		* yes, we can use.
 	
-65) 
+65) how to handle error in SP?
+		we can use try catch block to handle exceptions. 
+		
+66) can we use transaction in SP?
+		yes we can use transaction in SP's. it's advisable to use transaction minimally. try to avoid complex transaction which will affect the performance.
