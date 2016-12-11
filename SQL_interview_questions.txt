@@ -275,6 +275,7 @@
 		* SP increases the performance. Because once the stored procedure was successfully compiled an execution plan also get prepared. each time when we call the SP, it won't compile again until and unless the SP gets changed.
 		* SP nesting level is limited to 32 
 		* but we can use as many number of stored procedure as you want.
+		* SP will prevent the SQL injection attack.
 		
 58) What are the types of Stored Procedures?
 		* there are four types of stored procedure
@@ -313,7 +314,10 @@
 		* yes, we can use.
 	
 65) how to handle error in SP?
-		we can use try catch block to handle exceptions. 
+		we can use try catch block to handle exceptions. SQL server itself stored error in a table called sys.messages
 		
 66) can we use transaction in SP?
-		yes we can use transaction in SP's. it's advisable to use transaction minimally. try to avoid complex transaction which will affect the performance.
+		yes we can use transaction in SP's. it's advisable to use transaction minimally. try to avoid complex transaction which will affect the performance. It's good practive to use transaction within the try catch block.
+		
+67) can a SP accept both input and output parameters?
+		* Sp accept input and output parameters. a max of 1024 values.
