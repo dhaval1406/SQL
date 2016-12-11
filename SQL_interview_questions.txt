@@ -280,6 +280,21 @@
 			* user defined stored procedure
 			* extended stored procedure
 			* CLR stored Procedure
+			
 59) what is system stored procedure and user defined stored procedure?
+		* System stored procedures are predefined which has come from SQL server itself. Below are the sample system stored procedures.
+			for ex: sp_helptext, sp_depends, sp_executesql, sp_rename 
+		* User defined stored procedure are written by users for their own purpose. below is the basic syntax.
+			create proc or procedure sp_sampleprocedure
+			 -- input parameters if any ex: @my_var int 
+			 as 
+			 begin
+				-- your query.
+			 end
+			 
 60) what is extended stored procedure?
+		 
+		
 61) what is CLR stored Procedure?
+		* The CLR stored procedures are CLR supported. the procedures can be written in any of the .net supported programming languages like C#, VB, F#. 	
+		* The method should be public static. if the return type is void then default return to 0.
