@@ -3,4 +3,11 @@ video tutorials questions from basics to expert
 1. SQL/ SEQUEL
 2. SQL/ mysql/ mssql
 3. sql/ plsql/ tsql
-4. 
+4. parser/ execution plan
+5. joins
+6. temp table. CTE
+7. index
+8. view
+9. SP
+10. function
+11. trigger
