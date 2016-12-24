@@ -1,1 +1,6 @@
-video tutorials questions from basics to 
+video tutorials questions from basics to expert
+
+1. SQL/ SEQUEL
+2. SQL/ mysql/ mssql
+3. sql/ plsql/ tsql
+4. 
