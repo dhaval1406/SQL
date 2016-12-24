@@ -3,7 +3,6 @@
 	- Outer join will return matching rows from both tables as well as any unmatched rows from one or both the tables 
 	
 2) What is the difference between JOIN and UNION?
-
 	- SQL JOIN allows us to “lookup” records on other table based on the given conditions between two tables. 
 	- UNION operation allows us to add 2 similar data sets to create resulting data set that contains
           all the data from the source data sets. Union does not require any condition for joining.
@@ -203,7 +202,7 @@
 44) what is acid property?
 	the most important interview question is ACID property in transaction.
 	Atomic: the transaction should pass or fail in whole. it won't be in half done
-	Consistency: 
+	Consistency: transaction should create a valid state of data or the returns to its previous state of data
 	Isolation: one transaction should not interact / disturb another transation.
 	Durability: once after the successfull transaction data in all the table should be related. once after fail, the tables data should revert ack to it's original states.
 	
@@ -321,3 +320,6 @@
 		
 67) can a SP accept both input and output parameters?
 		* Sp accept input and output parameters. a max of 1024 values.
+		
+68) What is a Function?
+		
