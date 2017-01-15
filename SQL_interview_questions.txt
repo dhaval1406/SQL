@@ -321,5 +321,23 @@
 67) can a SP accept both input and output parameters?
 		* Sp accept input and output parameters. a max of 1024 values.
 		
-68) What is a Function?
-		
+68) What is Database?
+	* It’s a collection of data
+	* Organized in a format such that it’ll be easy to manipulate
+	* SQL is used to communicate with Database
+	* DBMS – an application which is used to maintain the data in database.
+		Ex: Microsoft SQL server, Oracle, Sysbase 
+
+69) difference between dbms vs rdbms
+	DBMS
+		* DBMS – Database Management System
+		* Data’s are stored in file system (may be in table) but there is no relationship between files or tables.
+		* Data stored in hierarchical form or a tree form
+		* There is no ACID property – security, transaction
+	RDBMS
+		* RDBMS – Relational Database Management System
+		* Data’s are stored in table form
+		* All the table have relationship between them
+		* Relationships are created by means of keys
+		* We have ACID property
+		* We have Normalization
