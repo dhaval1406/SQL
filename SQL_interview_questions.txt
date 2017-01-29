@@ -341,3 +341,40 @@
 		* Relationships are created by means of keys
 		* We have ACID property
 		* We have Normalization
+
+70) what is the difference between Aggregate functions and Arthimatic Operation
+		* when doing calculations using predefined functions is called Aggregate function.
+		* when doing calculations using arthimatic operators is called Arthimatic operation.
+		
+71) whtat is the differemce between PLSQL vs TSQL
+		
+72) What is the difference between MySQL vs Sql vs SQL Server
+		* SQL is not a server. It tells procedures to write queries which communicate with RDBMS.
+		
+	MYSQL 
+		* MySQL is the RDBMS which is open source and interoperability.
+		* MySQL is customizable – existing functionality.
+		* Mostly using in Web development. 
+		* Very friendly to PHP
+	SQL Server
+		* MS SQL Server is the Microsoft product which is paid version
+		* It’s also a RDBMS. Supports only Windows. Platform dependent, also has command prompt interaction.
+		* Very friendly with Microsoft technologies.
+		* Has workstation component and server component
+
+73) What is the difference between SQL vs Sequel
+	* Sequel is the historic name of the SQL
+	* Registered trademark of a America based Aerospace company
+	* Removed vowels and made it as SQL 
+	* SQL is not the server.
+	* SQL is the Structured Query language which let you to speak with RDBMS. 
+	
+74) What is  SQL?
+	* It’s not a server. SQL is a scripting language to speak with RDBMS.	
+	* SQL called Structured Query Language
+	* SQL gives you procedures to write queries which let you to communicate with RDBMS.
+	* RDBMS like Oracle, MS SQL Server, IBM, Sybase use SQL
+	* Common functionality like Select, Insert, Update, Delete, Create, Drop etc.
+
+
+	
