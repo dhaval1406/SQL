@@ -1,14 +1,20 @@
 video tutorials questions from basics to expert
 
-1. SQL/ SEQUEL
-2. SQL/ mysql/ mssql
-3. sql/ plsql/ tsql
-4. parser/ execution plan
-5. joins
-6. temp table. CTE
-7. index
-8. view
-9. SP
-10. function
-11. trigger
-12. transaction
+ SQL/ SEQUEL
+ database
+ dbms vs rdbms
+ SQL/ mysql/ mssql
+ sql/ plsql/ tsql
+ parser/ execution plan
+ aggregate vs arthimatic 
+ Error Handling
+ Shared architecture
+ ACID, Normalizations
+ joins
+ temp table. CTE
+ index
+ view
+ SP
+ function
+ trigger
+ transaction
