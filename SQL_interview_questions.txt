@@ -375,6 +375,6 @@
 	* SQL gives you procedures to write queries which let you to communicate with RDBMS.
 	* RDBMS like Oracle, MS SQL Server, IBM, Sybase use SQL
 	* Common functionality like Select, Insert, Update, Delete, Create, Drop etc.
-
-
 	
+75) What is parser and execution plan?
+76) what is query optimizer?
