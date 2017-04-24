@@ -1,50 +1,55 @@
-1) What is the difference between inner and outer join? Explain with example.
-	- Inner join returns rows when there is at least one match in both tables
-	- Outer join will return matching rows from both tables as well as any unmatched rows from one or both the tables 
+1) WHAT IS THE DIFFERENCE BETWEEN INNER AND OUTER JOIN? EXPLAIN WITH EXAMPLE.
+	- INNER JOIN RETURNS ROWS WHEN THERE IS AT LEAST ONE MATCH IN BOTH TABLES
+	- OUTER JOIN WILL RETURN MATCHING ROWS FROM BOTH TABLES AS WELL AS ANY UNMATCHED ROWS FROM ONE OR BOTH THE TABLES 
 	
-2) What is the difference between JOIN and UNION?
-	- SQL JOIN allows us to “lookup” records on other table based on the given conditions between two tables. 
-	- UNION operation allows us to add 2 similar data sets to create resulting data set that contains
-          all the data from the source data sets. Union does not require any condition for joining.
+2) WHAT IS THE DIFFERENCE BETWEEN JOIN AND UNION?
+	- SQL JOIN ALLOWS US TO “LOOKUP” RECORDS ON OTHER TABLE BASED ON THE GIVEN CONDITIONS BETWEEN TWO TABLES. 
+	- UNION OPERATION ALLOWS US TO ADD 2 SIMILAR DATA SETS TO CREATE RESULTING DATA SET THAT CONTAINS
+          ALL THE DATA FROM THE SOURCE DATA SETS. UNION DOES NOT REQUIRE ANY CONDITION FOR JOINING.
 	
-3) What is the difference between UNION and UNION ALL?	
-	- UNION operation returns only the unique records from the resulting data set  
-	- UNION ALL will return all the rows, even if one or more rows are duplicated to each other.
+3) WHAT IS THE DIFFERENCE BETWEEN UNION AND UNION ALL?	
+	- UNION OPERATION RETURNS ONLY THE UNIQUE RECORDS FROM THE RESULTING DATA SET  
+	- UNION CAN'T WORK WITH TEXT DATATYPE
+	- UNION ALL WILL RETURN ALL THE ROWS, EVEN IF ONE OR MORE ROWS ARE DUPLICATED TO EACH OTHER.
 
-4) What is the difference between WHERE clause and HAVING clause?
-	- WHERE clause can only be applied on a static non-aggregated column 
-	- we will need to use HAVING for aggregated columns.
+4) WHAT IS THE DIFFERENCE BETWEEN WHERE CLAUSE AND HAVING CLAUSE?
+	- WHERE CLAUSE CAN ONLY BE APPLIED ON A STATIC NON-AGGREGATED COLUMN 
+	- WE WILL NEED TO USE HAVING FOR AGGREGATED COLUMNS.
 	
-5) What is the difference among UNION, MINUS and INTERSECT?
-	- UNION combines the results from 2 tables and eliminates duplicate records from the result set.
-	- MINUS operator when used between 2 tables, gives us all the rows from the first table except 
-          the rows which are present in the second table.
-	- INTERSECT operator returns us only the matching or common rows between 2 result sets.
+5) WHAT IS THE DIFFERENCE AMONG UNION, MINUS AND INTERSECT?
+	- UNION COMBINES THE RESULTS FROM 2 TABLES AND ELIMINATES DUPLICATE RECORDS FROM THE RESULT SET.
+	- MINUS OPERATOR WHEN USED BETWEEN 2 TABLES, GIVES US ALL THE ROWS FROM THE FIRST TABLE EXCEPT 
+          THE ROWS WHICH ARE PRESENT IN THE SECOND TABLE.
+	- INTERSECT OPERATOR RETURNS US ONLY THE MATCHING OR COMMON ROWS BETWEEN 2 RESULT SETS.
 	
-6) How can we transpose a table using SQL (changing rows to column or vice-versa) ?
-	- The usual way to do it in SQL is to use CASE statement or DECODE statement
-	- also we can use pivot to do so.
+6) HOW CAN WE TRANSPOSE A TABLE USING SQL (CHANGING ROWS TO COLUMN OR VICE-VERSA) ?
+	- THE USUAL WAY TO DO IT IN SQL IS TO USE CASE STATEMENT OR DECODE STATEMENT
+	- ALSO WE CAN USE PIVOT TO DO SO.
 	
-7) How to generate row number in SQL Without ROWNUM
-	- SELECT name, sal, (SELECT COUNT(*)  FROM EMPLOYEE i WHERE o.name >= i.name) row_num
-		FROM EMPLOYEE o 
-		order by row_num
+7) HOW TO GENERATE ROW NUMBER IN SQL WITHOUT ROWNUM
+	- SELECT NAME, SAL, (SELECT COUNT(*)  FROM EMPLOYEE I WHERE O.NAME >= I	.NAME) ROW_NUM
+		FROM EMPLOYEE O 
+		ORDER BY ROW_NUM
 	
-8) How to select first 5 records from a table?
-	sql server -> SELECT TOP 5 * FROM EMP;
-	Oracle -> SELECT * FROM EMP WHERE ROWNUM <= 5;
-	Generic -> SELECT  name  FROM EMPLOYEE o
-			   WHERE (SELECT count(*) FROM EMPLOYEE i WHERE i.name < o.name) < 5
+8) HOW TO SELECT FIRST 5 RECORDS FROM A TABLE?
+	SQL SERVER -> SELECT TOP 5 * FROM EMP;
+	ORACLE -> SELECT * FROM EMP WHERE ROWNUM <= 5;
+	GENERIC -> SELECT  NAME  FROM EMPLOYEE O
+			   WHERE (SELECT COUNT(*) FROM EMPLOYEE I WHERE I.NAME < O.NAME) < 5
 			   
 ======================= SQL server questions ==========================================
 9) What are DMVs? - 
-	Dynamic Management Views (DMVs), are functions that give you information on the state of the server. DMVs, for the most part, are used to monitor the health of a server. They really just give you a snapshot of what’s going on inside the server. They let you monitor the health of a server instance, troubleshoot major problems and tune the server to increase performance			   
+	Dynamic Management Views (DMVs), are functions that give you information on the state of the server. DMVs, for the most part,
+	are used to monitor the health of a server. They really just give you a snapshot of what’s going on inside the server. 
+	They let you monitor the health of a server instance, troubleshoot major problems and tune the server to increase performance			   
 
-10) Define a temp table 
-	In a nutshell, a temp table is a temporary storage structure. What does that mean? Basically, you can use a temp table to store data temporarily so you can manipulate and change it before it reaches its destination format.	
+10) DEFINE A TEMP TABLE 
+	IN A NUTSHELL, A TEMP TABLE IS A TEMPORARY STORAGE STRUCTURE. WHAT DOES THAT MEAN? BASICALLY, YOU CAN USE A TEMP TABLE TO STORE DATA 
+	TEMPORARILY SO YOU CAN MANIPULATE AND CHANGE IT BEFORE IT REACHES ITS DESTINATION FORMAT.	
 	
-11) What’s the difference between a local  temp table and a global temp table? 
-	Local tables are accessible to a current user connected to the server. These tables disappear once the user has disconnected from the server. Global temp tables, on the other hand, are available to all users regardless of the connection. These tables stay active until all the global connections are closed.
+11) WHAT’S THE DIFFERENCE BETWEEN A LOCAL  TEMP TABLE AND A GLOBAL TEMP TABLE? 
+	LOCAL TABLES ARE ACCESSIBLE TO A CURRENT USER CONNECTED TO THE SERVER. THESE TABLES DISAPPEAR ONCE THE USER HAS DISCONNECTED FROM THE SERVER.
+	GLOBAL TEMP TABLES, ON THE OTHER HAND, ARE AVAILABLE TO ALL USERS REGARDLESS OF THE CONNECTION. THESE TABLES STAY ACTIVE UNTIL ALL THE GLOBAL CONNECTIONS ARE CLOSED.
 	
 12) Describe the difference between truncate and delete 
 	Delete command removes the rows from a table based on the condition that we provide with a WHERE clause. 
@@ -56,21 +61,28 @@
         If there is no where condition in delete statement it will remove all the records in the table.
 	
 13) What is a view?
-	A view is simply a virtual table that is made up of elements of multiple physical or “real” tables. Views are most commonly used to join multiple tables together, or control access to any tables existing in background server processes.	
+	A view is simply a virtual table that is made up of elements of multiple physical or “real” tables. Views are most commonly used to 
+	join multiple tables together, or control access to any tables existing in background server processes.	
 	
 14) What is the default port number for SQL Server? -
 	Basically, when SQL Server is enabled the server instant listens to the TCP port 1433.	It can be changed from the Network Utility TCP/IP properties.
 
 15) What are the difference between clustered and a non-clustered index?
-	A clustered index is a special type of index that reorders the way records in the table are physically stored. Therefore table can have only one clustered index. The leaf nodes of a clustered index contain the data pages.
+	A clustered index is a special type of index that reorders the way records in the table are physically stored. Therefore table can 
+	have only one clustered index. The leaf nodes of a clustered index contain the data pages.
 	
-	A non clustered index is a special type of index in which the logical order of the index does not match the physical stored order of the rows on disk. The leaf node of a non clustered index does not consist of the data pages. Instead, the leaf nodes contain index rows.
+	A non clustered index is a special type of index in which the logical order of the index does not match the physical stored order 
+	of the rows on disk. The leaf node of a non clustered index does not consist of the data pages. Instead, the leaf nodes contain index rows.
 	
 16) What is PRIMARY KEY?
-	A PRIMARY KEY constraint is a unique identifier for a row within a database table. Every table should have a primary key constraint to uniquely identify each row and only one primary key constraint can be created for each table. The primary key constraints are used to enforce entity integrity.
+	A PRIMARY KEY constraint is a unique identifier for a row within a database table. Every table should have a primary key 
+	constraint to uniquely identify each row and only one primary key constraint can be created for each table. The primary key constraints are used to
+	enforce entity integrity.
 	
 17) What is FOREIGN KEY?
-	A FOREIGN KEY constraint prevents any actions that would destroy links between tables with the corresponding data values. A foreign key in one table points to a primary key in another table. Foreign keys prevent actions that would leave rows with foreign key values when there are no primary keys with that value. The foreign key constraints are used to enforce referential integrity.
+	A FOREIGN KEY constraint prevents any actions that would destroy links between tables with the corresponding data values. 
+	A foreign key in one table points to a primary key in another table. Foreign keys prevent actions that would leave rows with foreign key values
+	when there are no primary keys with that value. The foreign key constraints are used to enforce referential integrity.
 	
 16) What's the difference between a primary key and a unique key?
 	Both primary key and unique key enforces uniqueness of the column on which they are defined. 
@@ -84,17 +96,17 @@
 	Stored procedures can encapsulate logic. You can change stored procedure code without affecting clients.
 	Stored procedures provide better security to your data.	
 	
-19) What is SQL?
-        •SQL stands for Structured Query Language.
-        •Basically SQL is like commands in simple English which provides you with ways to communicate with 
-         relational databases like MS SQL Server, Oracle server and MySQL.
+19) WHAT IS SQL?
+        •SQL STANDS FOR STRUCTURED QUERY LANGUAGE.
+        •BASICALLY SQL IS LIKE COMMANDS IN SIMPLE ENGLISH WHICH PROVIDES YOU WITH WAYS TO COMMUNICATE WITH 
+         RELATIONAL DATABASES LIKE MS SQL SERVER, ORACLE SERVER AND MYSQL.
 
-20) What is the order of execution of group by, order by, where and having?
-         •The order of execution is where, group by, having and then order by.
+20) WHAT IS THE ORDER OF EXECUTION OF GROUP BY, ORDER BY, WHERE AND HAVING?
+         •THE ORDER OF EXECUTION IS WHERE, GROUP BY, HAVING AND THEN ORDER BY.
 
-21) Difference between SQL and PL/SQL?
-        SQL is not a programming language but PL/SQL is the procedural language. PL/SQL is the enhanced form of SQL. 
-        In PL/SQL, we can perform loop and conditional statements. PL/SQL was developed by Oracle
+21) DIFFERENCE BETWEEN SQL AND PL/SQL?
+        SQL IS NOT A PROGRAMMING LANGUAGE BUT PL/SQL IS THE PROCEDURAL LANGUAGE. PL/SQL IS THE ENHANCED FORM OF SQL. 
+        IN PL/SQL, WE CAN PERFORM LOOP AND CONDITIONAL STATEMENTS. PL/SQL WAS DEVELOPED BY ORACLE
 
 22) What is CTE (Common Table Expression)?
         CTE stands for Common Table Expression. CTE is like a temp table which will create in our current 
@@ -233,12 +245,12 @@
 48) can we use case in DML statements?
 		No, we can't able to use CASE statement in DML queries 
 		
-49) what is natural join?
-		natural join will not comes under common join types. It's works based on the common column present within the two tables with same datatype.
+49) WHAT IS NATURAL JOIN?
+		NATURAL JOIN WILL NOT COMES UNDER COMMON JOIN TYPES. IT'S WORKS BASED ON THE COMMON COLUMN PRESENT WITHIN THE TWO TABLES WITH SAME DATATYPE.
 		
-50) what is cross join?
-		when joining two table if we havnt provided any where condition, then it will return the product of the two tables. Cross join is also called as cartesian join.
-		ex: we we join two tables called table a and table b. table a has 3 column and table b has 120 column. Then the cross join will provide output like 3 * 120  = 360 rows.
+50) WHAT IS CROSS JOIN?
+		WHEN JOINING TWO TABLE IF WE HAVNT PROVIDED ANY WHERE CONDITION, THEN IT WILL RETURN THE PRODUCT OF THE TWO TABLES. CROSS JOIN IS ALSO CALLED AS CARTESIAN JOIN.
+		EX: WE WE JOIN TWO TABLES CALLED TABLE A AND TABLE B. TABLE A HAS 3 COLUMN AND TABLE B HAS 120 COLUMN. THEN THE CROSS JOIN WILL PROVIDE OUTPUT LIKE 3 * 120  = 360 ROWS.
 		
 51) what is difference between left outer join and right outer join?
 		* left outer join and right outer join are the types of outer join.
@@ -321,69 +333,69 @@
 67) can a SP accept both input and output parameters?
 		* Sp accept input and output parameters. a max of 1024 values.
 		
-68) What is Database?
-	* It’s a collection of data
-	* Organized in a format such that it’ll be easy to manipulate
-	* SQL is used to communicate with Database
-	* DBMS – an application which is used to maintain the data in database.
-		Ex: Microsoft SQL server, Oracle, Sysbase 
+68) WHAT IS DATABASE?
+	* IT’S A COLLECTION OF DATA
+	* ORGANIZED IN A FORMAT SUCH THAT IT’LL BE EASY TO MANIPULATE
+	* SQL IS USED TO COMMUNICATE WITH DATABASE
+	* DBMS – AN APPLICATION WHICH IS USED TO MAINTAIN THE DATA IN DATABASE.
+		EX: MICROSOFT SQL SERVER, ORACLE, SYSBASE 
 
-69) difference between dbms vs rdbms
+69) DIFFERENCE BETWEEN DBMS VS RDBMS
 	DBMS
-		* DBMS – Database Management System
-		* Data’s are stored in file system (may be in table) but there is no relationship between files or tables.
-		* Data stored in hierarchical form or a tree form
-		* There is no ACID property – security, transaction
+		* DBMS – DATABASE MANAGEMENT SYSTEM
+		* DATA’S ARE STORED IN FILE SYSTEM (MAY BE IN TABLE) BUT THERE IS NO RELATIONSHIP BETWEEN FILES OR TABLES.
+		* DATA STORED IN HIERARCHICAL FORM OR A TREE FORM
+		* THERE IS NO ACID PROPERTY – SECURITY, TRANSACTION
 	RDBMS
-		* RDBMS – Relational Database Management System
-		* Data’s are stored in table form
-		* All the table have relationship between them
-		* Relationships are created by means of keys
-		* We have ACID property
-		* We have Normalization
+		* RDBMS – RELATIONAL DATABASE MANAGEMENT SYSTEM
+		* DATA’S ARE STORED IN TABLE FORM
+		* ALL THE TABLE HAVE RELATIONSHIP BETWEEN THEM
+		* RELATIONSHIPS ARE CREATED BY MEANS OF KEYS
+		* WE HAVE ACID PROPERTY
+		* WE HAVE NORMALIZATION
 
-70) what is the difference between Aggregate functions and Arthimatic Operation
-		* when doing calculations using predefined functions is called Aggregate function.
-		* when doing calculations using arthimatic operators is called Arthimatic operation.
+70) WHAT IS THE DIFFERENCE BETWEEN AGGREGATE FUNCTIONS AND ARTHIMATIC OPERATION
+		* WHEN DOING CALCULATIONS USING PREDEFINED FUNCTIONS IS CALLED AGGREGATE FUNCTION.
+		* WHEN DOING CALCULATIONS USING ARTHIMATIC OPERATORS IS CALLED ARTHIMATIC OPERATION.
 		
-71) whtat is the differemce between PLSQL vs TSQL
-		* PLSQL  - Procedural Structured Query Language
-		* PLSQL was extended from SQL with many features like declaring variable, SP, function, Error handling.			
-		* Which was developed by Oracle.		
-		* TSQL – Transact Structured Query Language
-		* This also extended from SQL as like PLSQL.
-		* Which was developed by Microsoft
+71) WHTAT IS THE DIFFEREMCE BETWEEN PLSQL VS TSQL
+		* PLSQL  - PROCEDURAL STRUCTURED QUERY LANGUAGE
+		* PLSQL WAS EXTENDED FROM SQL WITH MANY FEATURES LIKE DECLARING VARIABLE, SP, FUNCTION, ERROR HANDLING.			
+		* WHICH WAS DEVELOPED BY ORACLE.		
+		* TSQL – TRANSACT STRUCTURED QUERY LANGUAGE
+		* THIS ALSO EXTENDED FROM SQL AS LIKE PLSQL.
+		* WHICH WAS DEVELOPED BY MICROSOFT
 
 		
-72) What is the difference between MySQL vs Sql vs SQL Server
-		* SQL is not a server. It tells procedures to write queries which communicate with RDBMS.
+72) WHAT IS THE DIFFERENCE BETWEEN MYSQL VS SQL VS SQL SERVER
+		* SQL IS NOT A SERVER. IT TELLS PROCEDURES TO WRITE QUERIES WHICH COMMUNICATE WITH RDBMS.
 		
 	MYSQL 
-		* MySQL is the RDBMS which is open source and interoperability.
-		* MySQL is customizable – existing functionality.
-		* Mostly using in Web development. 
-		* Very friendly to PHP
-	SQL Server
-		* MS SQL Server is the Microsoft product which is paid version
-		* It’s also a RDBMS. Supports only Windows. Platform dependent, also has command prompt interaction.
-		* Very friendly with Microsoft technologies.
-		* Has workstation component and server component
+		* MYSQL IS THE RDBMS WHICH IS OPEN SOURCE AND INTEROPERABILITY.
+		* MYSQL IS CUSTOMIZABLE – EXISTING FUNCTIONALITY.
+		* MOSTLY USING IN WEB DEVELOPMENT. 
+		* VERY FRIENDLY TO PHP
+	SQL SERVER
+		* MS SQL SERVER IS THE MICROSOFT PRODUCT WHICH IS PAID VERSION
+		* IT’S ALSO A RDBMS. SUPPORTS ONLY WINDOWS. PLATFORM DEPENDENT, ALSO HAS COMMAND PROMPT INTERACTION.
+		* VERY FRIENDLY WITH MICROSOFT TECHNOLOGIES.
+		* HAS WORKSTATION COMPONENT AND SERVER COMPONENT
 
-73) What is the difference between SQL vs Sequel
-	* Sequel is the historic name of the SQL
-	* Registered trademark of a America based Aerospace company
-	* Removed vowels and made it as SQL 
-	* SQL is not the server.
-	* SQL is the Structured Query language which let you to speak with RDBMS. 
+73) WHAT IS THE DIFFERENCE BETWEEN SQL VS SEQUEL
+	* SEQUEL IS THE HISTORIC NAME OF THE SQL
+	* REGISTERED TRADEMARK OF A AMERICA BASED AEROSPACE COMPANY
+	* REMOVED VOWELS AND MADE IT AS SQL 
+	* SQL IS NOT THE SERVER.
+	* SQL IS THE STRUCTURED QUERY LANGUAGE WHICH LET YOU TO SPEAK WITH RDBMS. 
 	
-74) What is  SQL?
-	* It’s not a server. SQL is a scripting language to speak with RDBMS.	
-	* SQL called Structured Query Language
-	* SQL gives you procedures to write queries which let you to communicate with RDBMS.
-	* RDBMS like Oracle, MS SQL Server, IBM, Sybase use SQL
-	* Common functionality like Select, Insert, Update, Delete, Create, Drop etc.
+74) WHAT IS  SQL?
+	* IT’S NOT A SERVER. SQL IS A SCRIPTING LANGUAGE TO SPEAK WITH RDBMS.	
+	* SQL CALLED STRUCTURED QUERY LANGUAGE
+	* SQL GIVES YOU PROCEDURES TO WRITE QUERIES WHICH LET YOU TO COMMUNICATE WITH RDBMS.
+	* RDBMS LIKE ORACLE, MS SQL SERVER, IBM, SYBASE USE SQL
+	* COMMON FUNCTIONALITY LIKE SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ETC.
 	
-75) What is parser, Query Optimizer and execution plan?
-		When query to submitted to execute it wont get executes as given.
-		parser will check athe grammer and syntax. if the query is well formed then parse tree gets created and Query Optimizer will come into picture. Query Optimizer uses the parse tree generated by parser and decideS how to execute the query like which way is best which way can improve the performance of te CPU.
-		Finally, query optimizer gives execution plan to the storage engine which gets executed start away.
+75) WHAT IS PARSER, QUERY OPTIMIZER AND EXECUTION PLAN?
+		WHEN QUERY TO SUBMITTED TO EXECUTE IT WONT GET EXECUTES AS GIVEN.
+		PARSER WILL CHECK ATHE GRAMMER AND SYNTAX. IF THE QUERY IS WELL FORMED THEN PARSE TREE GETS CREATED AND QUERY OPTIMIZER WILL COME INTO PICTURE. QUERY OPTIMIZER USES THE PARSE TREE GENERATED BY PARSER AND DECIDES HOW TO EXECUTE THE QUERY LIKE WHICH WAY IS BEST WHICH WAY CAN IMPROVE THE PERFORMANCE OF TE CPU.
+		FINALLY, QUERY OPTIMIZER GIVES EXECUTION PLAN TO THE STORAGE ENGINE WHICH GETS EXECUTED START AWAY.
