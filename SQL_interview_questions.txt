@@ -269,16 +269,16 @@
 		* 	we can use charlist to search multiple datas.
 			ex: select city from states where statename like '[cba]%'
 			
-55) What is Sequel?, What is SQL?, and what is the difference/
-		* SQL and Sequel are same.
-		* Sequel is the earlier name of SQL. But, still we can see many people's are using this name.
-		* Sequel name changed to SQL by removing the vowels. Because, an aircraft company  registered sequel as trademark.
+55) WHAT IS SEQUEL?, WHAT IS SQL?, AND WHAT IS THE DIFFERENCE/
+		* SQL AND SEQUEL ARE SAME.
+		* SEQUEL IS THE EARLIER NAME OF SQL. BUT, STILL WE CAN SEE MANY PEOPLE'S ARE USING THIS NAME.
+		* SEQUEL NAME CHANGED TO SQL BY REMOVING THE VOWELS. BECAUSE, AN AIRCRAFT COMPANY  REGISTERED SEQUEL AS TRADEMARK.
 
-56) How a Sql query gets executes?
-		when a sql query is given to server, the parser receives it then parse the query and then te parsed query will send to optimizer to create a execution plan.
-		based on the execution plan, the SQL query gets executes and the result set will produce.
+56) HOW A SQL QUERY GETS EXECUTES?
+		WHEN A SQL QUERY IS GIVEN TO SERVER, THE PARSER RECEIVES IT THEN PARSE THE QUERY AND THEN TE PARSED QUERY WILL SEND TO OPTIMIZER TO CREATE A EXECUTION PLAN.
+		BASED ON THE EXECUTION PLAN, THE SQL QUERY GETS EXECUTES AND THE RESULT SET WILL PRODUCE.
 		
-		NOTE: the main work of the parser is to check the SQL query syntatically with the SQL grammer rules and also allocate space in memory to execute the query.
+		NOTE: THE MAIN WORK OF THE PARSER IS TO CHECK THE SQL QUERY SYNTATICALLY WITH THE SQL GRAMMER RULES AND ALSO ALLOCATE SPACE IN MEMORY TO EXECUTE THE QUERY.
 		
 57) What is stored procedures?
 		* stored procedure is a batch of scripts which gets executes at a time.
