@@ -1,1 +1,36 @@
 SQL Quiz
+===========
+
+1. Can we use DML statement in function?
+	a) Yes 				b) No
+	ANS: Yes
+
+2. Can a Table variable (variable of type table) affect in transaction scope?
+	a) Yes 				b) No
+	ANS: No
+
+3. Can we able to use user defined functions in select query?
+	a) Yes 				b)No
+	ANS: yes	
+	
+4. Can we able to use user defined functions in DML query?
+	a) Yes 				b)No
+	ANS: No	
+	
+5. Can we able to use case in DML statement?
+	a) Yes 				b)No
+	ANS: No	
+	
+6. truncate and drop table command can be revoked?
+	a) Yes 				b)No
+	ANS: No
+	
+7. Can a delete command be revoked?
+	a) Yes 				b)No
+	ANS: Yes
+	
+8. Can we return null value from SP?
+	a) Yes 				b)No
+	ANS: No - instead 0 can be return
+	
+9. 
