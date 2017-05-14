@@ -51,21 +51,21 @@
 	LOCAL TABLES ARE ACCESSIBLE TO A CURRENT USER CONNECTED TO THE SERVER. THESE TABLES DISAPPEAR ONCE THE USER HAS DISCONNECTED FROM THE SERVER.
 	GLOBAL TEMP TABLES, ON THE OTHER HAND, ARE AVAILABLE TO ALL USERS REGARDLESS OF THE CONNECTION. THESE TABLES STAY ACTIVE UNTIL ALL THE GLOBAL CONNECTIONS ARE CLOSED.
 	
-12) Describe the difference between truncate and delete 
-	Delete command removes the rows from a table based on the condition that we provide with a WHERE clause. 
-	Truncate will actually remove all the rows from a table and there will be no data in the table after 
-        we run the truncate command.
-        Where clause can be use in Delete statement whereas we cannot use where clause in Truncate.
-        Truncate delete all the rows in the table which can't be revoked whereas Delete will remove rows based on where       
-        conditions.
-        If there is no where condition in delete statement it will remove all the records in the table.
+12) DESCRIBE THE DIFFERENCE BETWEEN TRUNCATE AND DELETE 
+	DELETE COMMAND REMOVES THE ROWS FROM A TABLE BASED ON THE CONDITION THAT WE PROVIDE WITH A WHERE CLAUSE. 
+	TRUNCATE WILL ACTUALLY REMOVE ALL THE ROWS FROM A TABLE AND THERE WILL BE NO DATA IN THE TABLE AFTER 
+        WE RUN THE TRUNCATE COMMAND.
+        WHERE CLAUSE CAN BE USE IN DELETE STATEMENT WHEREAS WE CANNOT USE WHERE CLAUSE IN TRUNCATE.
+        TRUNCATE DELETE ALL THE ROWS IN THE TABLE WHICH CAN'T BE REVOKED WHEREAS DELETE WILL REMOVE ROWS BASED ON WHERE       
+        CONDITIONS.
+        IF THERE IS NO WHERE CONDITION IN DELETE STATEMENT IT WILL REMOVE ALL THE RECORDS IN THE TABLE.
 	
 13) What is a view?
 	A view is simply a virtual table that is made up of elements of multiple physical or “real” tables. Views are most commonly used to 
 	join multiple tables together, or control access to any tables existing in background server processes.	
 	
-14) What is the default port number for SQL Server? -
-	Basically, when SQL Server is enabled the server instant listens to the TCP port 1433.	It can be changed from the Network Utility TCP/IP properties.
+14) WHAT IS THE DEFAULT PORT NUMBER FOR SQL SERVER? -
+	BASICALLY, WHEN SQL SERVER IS ENABLED THE SERVER INSTANT LISTENS TO THE TCP PORT 1433.	IT CAN BE CHANGED FROM THE NETWORK UTILITY TCP/IP PROPERTIES.
 
 15) What are the difference between clustered and a non-clustered index?
 	A clustered index is a special type of index that reorders the way records in the table are physically stored. Therefore table can 
@@ -118,11 +118,11 @@
        Temp table is preferable than CTE.  
        CTE will not be available in consecutive query but temp table will be available in entire connection.
 
-24) Can we use user defined functions in select statements?
-        yes, we can use user defined functions in select statements.
+24) CAN WE USE USER DEFINED FUNCTIONS IN SELECT STATEMENTS?
+        YES, WE CAN USE USER DEFINED FUNCTIONS IN SELECT STATEMENTS.
 
-25) can we use DML statements in user defined functions?
-        No, we can't able to use DML statements in functions. We can only able to use select statement in a function.
+25) CAN WE USE DML STATEMENTS IN USER DEFINED FUNCTIONS?
+        NO, WE CAN'T ABLE TO USE DML STATEMENTS IN FUNCTIONS. WE CAN ONLY ABLE TO USE SELECT STATEMENT IN A FUNCTION.
 
 26) What is Composite key?
         Composite key is the combination of two or more column in a table which make each row in a table unique.
@@ -130,8 +130,8 @@
 27) What are Triggers?
 		Triggers are the special stored procedure which executes automatically when insert, update, delete operation happens on the table. Triggers will reduce the db performance.
 
-28) Can we use a function in select statement?
-	yes, we can use function in select statement. We can write some complex queries to a function and refer it in where condition of a query which will improve the performance of your query. which also reduces the duplication of te query
+28) CAN WE USE A FUNCTION IN SELECT STATEMENT?
+	YES, WE CAN USE FUNCTION IN SELECT STATEMENT. WE CAN WRITE SOME COMPLEX QUERIES TO A FUNCTION AND REFER IT IN WHERE CONDITION OF A QUERY WHICH WILL IMPROVE THE PERFORMANCE OF YOUR QUERY. WHICH ALSO REDUCES THE DUPLICATION OF TE QUERY
 	
 29)What is subquery?
 	subquery are the query within a query.
@@ -148,9 +148,9 @@
 	Since percentage symbol is at-last, it will retrieve data starts with bal. If I pust '%' at first position, the query will retrieve data ends with bal.
 	Similarly we can also use the percentile '%' symbol at middle.
 
-32) difference between Truncate and Drop?
-	Truncate will remove all the records in a table and the table structure remains unchanged.
-	Drop will remove the table from the database. both the commands can't be roll-back.
+32) DIFFERENCE BETWEEN TRUNCATE AND DROP?
+	TRUNCATE WILL REMOVE ALL THE RECORDS IN A TABLE AND THE TABLE STRUCTURE REMAINS UNCHANGED.
+	DROP WILL REMOVE THE TABLE FROM THE DATABASE. BOTH THE COMMANDS CAN'T BE ROLL-BACK.
 	
 33) how to add a column to an existing table?
 	alter table emp add address varchar(100);
@@ -178,10 +178,10 @@
 38) what is unique constraint?
 	unique constraint make sure that each row of a column must have a unique value that make the record unique.
 	
-39) how to declare a variable in sql server/
-	declare @my_var varchar(10) = null
+39) HOW TO DECLARE A VARIABLE IN SQL SERVER/
+	DECLARE @MY_VAR VARCHAR(10) = NULL
 	
-	in the above line, I've declared a variable called @my_var which is of type varchar which has 10 byte of memory and I set default to null.
+	IN THE ABOVE LINE, I'VE DECLARED A VARIABLE CALLED @MY_VAR WHICH IS OF TYPE VARCHAR WHICH HAS 10 BYTE OF MEMORY AND I SET DEFAULT TO NULL.
 	
 40) what are the mode of authentications in SQL server?
 	Windows authentications and SQL server authentications.
@@ -242,8 +242,8 @@
 		we can use case statement in select query.
 		ex: select case when column_name is null then 'A' else 'B' end as some_query from sampletable
 		
-48) can we use case in DML statements?
-		No, we can't able to use CASE statement in DML queries 
+48) CAN WE USE CASE IN DML STATEMENTS?
+		NO, WE CAN'T ABLE TO USE CASE STATEMENT IN DML QUERIES 
 		
 49) WHAT IS NATURAL JOIN?
 		NATURAL JOIN WILL NOT COMES UNDER COMMON JOIN TYPES. IT'S WORKS BASED ON THE COMMON COLUMN PRESENT WITHIN THE TWO TABLES WITH SAME DATATYPE.
@@ -252,15 +252,15 @@
 		WHEN JOINING TWO TABLE IF WE HAVNT PROVIDED ANY WHERE CONDITION, THEN IT WILL RETURN THE PRODUCT OF THE TWO TABLES. CROSS JOIN IS ALSO CALLED AS CARTESIAN JOIN.
 		EX: WE WE JOIN TWO TABLES CALLED TABLE A AND TABLE B. TABLE A HAS 3 COLUMN AND TABLE B HAS 120 COLUMN. THEN THE CROSS JOIN WILL PROVIDE OUTPUT LIKE 3 * 120  = 360 ROWS.
 		
-51) what is difference between left outer join and right outer join?
-		* left outer join and right outer join are the types of outer join.
-		* left join will return all the record from the left table and only the matched record from the right table. likewise, right outer join return all record from right table and only the matched record from the left table.
+51) WHAT IS DIFFERENCE BETWEEN LEFT OUTER JOIN AND RIGHT OUTER JOIN?
+		* LEFT OUTER JOIN AND RIGHT OUTER JOIN ARE THE TYPES OF OUTER JOIN.
+		* LEFT JOIN WILL RETURN ALL THE RECORD FROM THE LEFT TABLE AND ONLY THE MATCHED RECORD FROM THE RIGHT TABLE. LIKEWISE, RIGHT OUTER JOIN RETURN ALL RECORD FROM RIGHT TABLE AND ONLY THE MATCHED RECORD FROM THE LEFT TABLE.
 		
-52)	will the truncate and drop table command can revoke?
-		No, this operations can't be revoked.
+52)	WILL THE TRUNCATE AND DROP TABLE COMMAND CAN REVOKE?
+		NO, THIS OPERATIONS CAN'T BE REVOKED.
 		
-53) What is full outer join?
-		all the records from both the right and left table gets returned even if there is no match record.
+53) WHAT IS FULL OUTER JOIN?
+		ALL THE RECORDS FROM BOTH THE RIGHT AND LEFT TABLE GETS RETURNED EVEN IF THERE IS NO MATCH RECORD.
 
 54) what are the different types of pattern matches?
 		* we have seen pattern match with like 
@@ -399,3 +399,7 @@
 		WHEN QUERY TO SUBMITTED TO EXECUTE IT WONT GET EXECUTES AS GIVEN.
 		PARSER WILL CHECK ATHE GRAMMER AND SYNTAX. IF THE QUERY IS WELL FORMED THEN PARSE TREE GETS CREATED AND QUERY OPTIMIZER WILL COME INTO PICTURE. QUERY OPTIMIZER USES THE PARSE TREE GENERATED BY PARSER AND DECIDES HOW TO EXECUTE THE QUERY LIKE WHICH WAY IS BEST WHICH WAY CAN IMPROVE THE PERFORMANCE OF TE CPU.
 		FINALLY, QUERY OPTIMIZER GIVES EXECUTION PLAN TO THE STORAGE ENGINE WHICH GETS EXECUTED START AWAY.
+		
+		
+76) find the nth salary in the list? with predefined function, without function
+77) 
