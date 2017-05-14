@@ -33,4 +33,6 @@ SQL Quiz
 	a) Yes 				b)No
 	ANS: No - instead 0 can be return
 	
-9. 
+9. Can we able to use DML statements in case?
+	a) Yes 				b)No
+	ANS: No - instead 0 can be return
