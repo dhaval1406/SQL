@@ -402,4 +402,13 @@
 		
 		
 76) find the nth salary in the list? with predefined function, without function
+
+* select * from dbo.CUSTOMERs
+* select top 2 * from dbo.CUSTOMERS
+* select ROW_NUMBER()over(order by salary) as test, * from dbo.CUSTOMERS
+* select ROW_NUMBEt(tover(partition by salary order by salary), * from dbo.CUSTOMERS
+ *select * from (select ROW_NUMBER()over(order by salary) as row_num, * from dbo.CUSTOMERS) b where b.row_num <= 2
+* SELECT name, salary, (SELECT COUNT(*)  FROM CUSTOMERS cust WHERE o.name <= cust.name
+) row_num FROM customers o order by row_num
+
 77) 
