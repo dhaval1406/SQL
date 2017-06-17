@@ -36,3 +36,35 @@ SQL Quiz
 9. Can we able to use DML statements in case?
 	a) Yes 				b)No
 	ANS: No - instead 0 can be return
+
+10. How many clustered index can be created on a table?
+	a) 1 				b) more than one
+	AND: one
+	
+11. Can we able to create more than one non-clustered index?
+	a) yes				b) no
+	ans: yes
+	
+12. will clustered index get created when you create a table with a  primary key on a column?
+	a) yes 			b) no
+	ans: yes
+
+13. can we able to create a clustered index on more than one column at a time?
+	a) yes 			b) no
+	ans: yes
+	
+14. can we able to get a out parameter in SP?
+	a) yes 		b) no
+
+15. In a fetching select query, can we able to assign a particular value  to a variable?
+	a) yes		b) no
+	ans: no
+	explanation : when you write a select query to fetch only the records you will not be able to assign a particular column value to a variable.
+				  ex: select name, age, @department = dept from student. //this query wont get executed in sql server 2008. it wil throw error.
+				  The vice versa also won't work.
+			
+16. what is the default schema in SQL server?
+	a) dbo 	b) ser c) ssp
+	ans: dbo
+
+17. 
