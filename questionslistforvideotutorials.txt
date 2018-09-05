@@ -1,0 +1,20 @@
+video tutorials questions from basics to expert
+
+ SQL/ SEQUEL
+ database
+ dbms vs rdbms
+ SQL/ mysql/ mssql
+ sql/ plsql/ tsql
+ parser/ execution plan
+ aggregate vs arthimatic 
+ Error Handling
+ Shared architecture
+ ACID, Normalizations
+ joins
+ temp table. CTE
+ index
+ view
+ SP
+ function
+ trigger
+ transaction

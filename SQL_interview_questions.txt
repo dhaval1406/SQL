@@ -1,73 +1,90 @@
-1) What is the difference between inner and outer join? Explain with example.
+1) WHAT IS THE DIFFERENCE BETWEEN INNER AND OUTER JOIN? EXPLAIN WITH EXAMPLE.
+	- INNER JOIN RETURNS ROWS WHEN THERE IS AT LEAST ONE MATCH IN BOTH TABLES
+	- OUTER JOIN WILL RETURN MATCHING ROWS FROM BOTH TABLES AS WELL AS ANY UNMATCHED ROWS FROM ONE OR BOTH THE TABLES 
+	
+2) WHAT IS THE DIFFERENCE BETWEEN JOIN AND UNION?
+	- SQL JOIN ALLOWS US TO “LOOKUP” RECORDS ON OTHER TABLE BASED ON THE GIVEN CONDITIONS BETWEEN TWO TABLES. 
+	- UNION OPERATION ALLOWS US TO ADD 2 SIMILAR DATA SETS TO CREATE RESULTING DATA SET THAT CONTAINS
+          ALL THE DATA FROM THE SOURCE DATA SETS. UNION DOES NOT REQUIRE ANY CONDITION FOR JOINING.
+	
+3) WHAT IS THE DIFFERENCE BETWEEN UNION AND UNION ALL?	
+	- UNION OPERATION RETURNS ONLY THE UNIQUE RECORDS FROM THE RESULTING DATA SET  
+	- UNION CAN'T WORK WITH TEXT DATATYPE
+	- UNION ALL WILL RETURN ALL THE ROWS, EVEN IF ONE OR MORE ROWS ARE DUPLICATED TO EACH OTHER.
 
-	- Inner join returns rows when there is at least one match in both tables
-	- Outer join will return matching rows from both tables as well as any unmatched rows from one or both the tables 
+4) WHAT IS THE DIFFERENCE BETWEEN WHERE CLAUSE AND HAVING CLAUSE?
+	- WHERE CLAUSE CAN ONLY BE APPLIED ON A STATIC NON-AGGREGATED COLUMN 
+	- WE WILL NEED TO USE HAVING FOR AGGREGATED COLUMNS.
 	
-2) What is the difference between JOIN and UNION?
-
-	- SQL JOIN allows us to “lookup” records on other table based on the given conditions between two tables. 
-	- UNION operation allows us to add 2 similar data sets to create resulting data set that contains all the data from the source data sets. Union does not require any condition for joining.
+5) WHAT IS THE DIFFERENCE AMONG UNION, MINUS AND INTERSECT?
+	- UNION COMBINES THE RESULTS FROM 2 TABLES AND ELIMINATES DUPLICATE RECORDS FROM THE RESULT SET.
+	- MINUS OPERATOR WHEN USED BETWEEN 2 TABLES, GIVES US ALL THE ROWS FROM THE FIRST TABLE EXCEPT 
+          THE ROWS WHICH ARE PRESENT IN THE SECOND TABLE.
+	- INTERSECT OPERATOR RETURNS US ONLY THE MATCHING OR COMMON ROWS BETWEEN 2 RESULT SETS.
 	
-3) What is the difference between UNION and UNION ALL?	
-	- UNION operation returns only the unique records from the resulting data set  
-	- UNION ALL will return all the rows, even if one or more rows are duplicated to each other.
-
-4) What is the difference between WHERE clause and HAVING clause?
-	- WHERE clause can only be applied on a static non-aggregated column 
-	- we will need to use HAVING for aggregated columns.
+6) HOW CAN WE TRANSPOSE A TABLE USING SQL (CHANGING ROWS TO COLUMN OR VICE-VERSA) ?
+	- THE USUAL WAY TO DO IT IN SQL IS TO USE CASE STATEMENT OR DECODE STATEMENT
+	- ALSO WE CAN USE PIVOT TO DO SO.
 	
-5) What is the difference among UNION, MINUS and INTERSECT?
-	- UNION combines the results from 2 tables and eliminates duplicate records from the result set.
-	- MINUS operator when used between 2 tables, gives us all the rows from the first table except the rows which are present in the second table.
-	- INTERSECT operator returns us only the matching or common rows between 2 result sets.
+7) HOW TO GENERATE ROW NUMBER IN SQL WITHOUT ROWNUM
+	- SELECT NAME, SAL, (SELECT COUNT(*)  FROM EMPLOYEE I WHERE O.NAME >= I	.NAME) ROW_NUM
+		FROM EMPLOYEE O 
+		ORDER BY ROW_NUM
 	
-6) How can we transpose a table using SQL (changing rows to column or vice-versa) ?
-	- The usual way to do it in SQL is to use CASE statement or DECODE statement
-	
-7) How to generate row number in SQL Without ROWNUM
-	- SELECT name, sal, (SELECT COUNT(*)  FROM EMPLOYEE i WHERE o.name >= i.name) row_num
-		FROM EMPLOYEE o 
-		order by row_num
-	
-8) How to select first 5 records from a table?
-	sql server -> SELECT TOP 5 * FROM EMP;
-	Oracle -> SELECT * FROM EMP WHERE ROWNUM <= 5;
-	Generic -> SELECT  name  FROM EMPLOYEE o
-			   WHERE (SELECT count(*) FROM EMPLOYEE i WHERE i.name < o.name) < 5
+8) HOW TO SELECT FIRST 5 RECORDS FROM A TABLE?
+	SQL SERVER -> SELECT TOP 5 * FROM EMP;
+	ORACLE -> SELECT * FROM EMP WHERE ROWNUM <= 5;
+	GENERIC -> SELECT  NAME  FROM EMPLOYEE O
+			   WHERE (SELECT COUNT(*) FROM EMPLOYEE I WHERE I.NAME < O.NAME) < 5
 			   
 ======================= SQL server questions ==========================================
 9) What are DMVs? - 
-	Dynamic Management Views (DMVs), are functions that give you information on the state of the server. DMVs, for the most part, are used to monitor the health of a server. They really just give you a snapshot of what’s going on inside the server. They let you monitor the health of a server instance, troubleshoot major problems and tune the server to increase performance			   
+	Dynamic Management Views (DMVs), are functions that give you information on the state of the server. DMVs, for the most part,
+	are used to monitor the health of a server. They really just give you a snapshot of what’s going on inside the server. 
+	They let you monitor the health of a server instance, troubleshoot major problems and tune the server to increase performance			   
 
-10) Define a temp table 
-	In a nutshell, a temp table is a temporary storage structure. What does that mean? Basically, you can use a temp table to store data temporarily so you can manipulate and change it before it reaches its destination format.	
+10) DEFINE A TEMP TABLE 
+	IN A NUTSHELL, A TEMP TABLE IS A TEMPORARY STORAGE STRUCTURE. WHAT DOES THAT MEAN? BASICALLY, YOU CAN USE A TEMP TABLE TO STORE DATA 
+	TEMPORARILY SO YOU CAN MANIPULATE AND CHANGE IT BEFORE IT REACHES ITS DESTINATION FORMAT.	
 	
-11) What’s the difference between a local  temp table and a global temp table? 
-	Local tables are accessible to a current user connected to the server. These tables disappear once the user has disconnected from the server. Global temp tables, on the other hand, are available to all users regardless of the connection. These tables stay active until all the global connections are closed.
+11) WHAT’S THE DIFFERENCE BETWEEN A LOCAL  TEMP TABLE AND A GLOBAL TEMP TABLE? 
+	LOCAL TABLES ARE ACCESSIBLE TO A CURRENT USER CONNECTED TO THE SERVER. THESE TABLES DISAPPEAR ONCE THE USER HAS DISCONNECTED FROM THE SERVER.
+	GLOBAL TEMP TABLES, ON THE OTHER HAND, ARE AVAILABLE TO ALL USERS REGARDLESS OF THE CONNECTION. THESE TABLES STAY ACTIVE UNTIL ALL THE GLOBAL CONNECTIONS ARE CLOSED.
 	
-12) Describe the difference between truncate and delete 
-	Delete command removes the rows from a table based on the condition that we provide with a WHERE clause. 
-	Truncate will actually remove all the rows from a table and there will be no data in the table after we run the truncate command.
+12) DESCRIBE THE DIFFERENCE BETWEEN TRUNCATE AND DELETE 
+	DELETE COMMAND REMOVES THE ROWS FROM A TABLE BASED ON THE CONDITION THAT WE PROVIDE WITH A WHERE CLAUSE. 
+	TRUNCATE WILL ACTUALLY REMOVE ALL THE ROWS FROM A TABLE AND THERE WILL BE NO DATA IN THE TABLE AFTER 
+        WE RUN THE TRUNCATE COMMAND.
+        WHERE CLAUSE CAN BE USE IN DELETE STATEMENT WHEREAS WE CANNOT USE WHERE CLAUSE IN TRUNCATE.
+        TRUNCATE DELETE ALL THE ROWS IN THE TABLE WHICH CAN'T BE REVOKED WHEREAS DELETE WILL REMOVE ROWS BASED ON WHERE       
+        CONDITIONS.
+        IF THERE IS NO WHERE CONDITION IN DELETE STATEMENT IT WILL REMOVE ALL THE RECORDS IN THE TABLE.
 	
 13) What is a view?
-	A view is simply a virtual table that is made up of elements of multiple physical or “real” tables. Views are most commonly used to join multiple tables together, or control access to any tables existing in background server processes.	
+	A view is simply a virtual table that is made up of elements of multiple physical or “real” tables. Views are most commonly used to 
+	join multiple tables together, or control access to any tables existing in background server processes.	
 	
-14) What is the default port number for SQL Server? -
-	Basically, when SQL Server is enabled the server instant listens to the TCP port 1433.	It can be changed from the Network Utility TCP/IP properties.
+14) WHAT IS THE DEFAULT PORT NUMBER FOR SQL SERVER? -
+	BASICALLY, WHEN SQL SERVER IS ENABLED THE SERVER INSTANT LISTENS TO THE TCP PORT 1433.	IT CAN BE CHANGED FROM THE NETWORK UTILITY TCP/IP PROPERTIES.
 
 15) What are the difference between clustered and a non-clustered index?
-	A clustered index is a special type of index that reorders the way records in the table are physically stored. Therefore table can have only one clustered index. The leaf nodes of a clustered index contain the data pages.
+	A clustered index is a special type of index that reorders the way records in the table are physically stored. Therefore table can 
+	have only one clustered index. The leaf nodes of a clustered index contain the data pages.
 	
-	A non clustered index is a special type of index in which the logical order of the index does not match the physical stored order of the rows on disk. The leaf node of a non clustered index does not consist of the data pages. Instead, the leaf nodes contain index rows.
+	A non clustered index is a special type of index in which the logical order of the index does not match the physical stored order 
+	of the rows on disk. The leaf node of a non clustered index does not consist of the data pages. Instead, the leaf nodes contain index rows.
 	
 16) What is PRIMARY KEY?
-	A PRIMARY KEY constraint is a unique identifier for a row within a database table. Every table should have a primary key constraint to uniquely identify each row and only one primary key constraint can be created for each table. The primary key constraints are used to enforce entity integrity.
+	A PRIMARY KEY constraint is a unique identifier for a row within a database table. Every table should have a primary key 
+	constraint to uniquely identify each row and only one primary key constraint can be created for each table. The primary key constraints are used to
+	enforce entity integrity.
 	
 17) What is FOREIGN KEY?
-
-	A FOREIGN KEY constraint prevents any actions that would destroy links between tables with the corresponding data values. A foreign key in one table points to a primary key in another table. Foreign keys prevent actions that would leave rows with foreign key values when there are no primary keys with that value. The foreign key constraints are used to enforce referential integrity.
+	A FOREIGN KEY constraint prevents any actions that would destroy links between tables with the corresponding data values. 
+	A foreign key in one table points to a primary key in another table. Foreign keys prevent actions that would leave rows with foreign key values
+	when there are no primary keys with that value. The foreign key constraints are used to enforce referential integrity.
 	
-	16) What's the difference between a primary key and a unique key?
+16) What's the difference between a primary key and a unique key?
 	Both primary key and unique key enforces uniqueness of the column on which they are defined. 
 	But by default primary key creates a clustered index on the column, where are unique creates a non-clustered index by default. 
 	Another major difference is that, primary key doesn't allow NULLs, but unique key allows one NULL only.	
@@ -79,3 +96,319 @@
 	Stored procedures can encapsulate logic. You can change stored procedure code without affecting clients.
 	Stored procedures provide better security to your data.	
 	
+19) WHAT IS SQL?
+        •SQL STANDS FOR STRUCTURED QUERY LANGUAGE.
+        •BASICALLY SQL IS LIKE COMMANDS IN SIMPLE ENGLISH WHICH PROVIDES YOU WITH WAYS TO COMMUNICATE WITH 
+         RELATIONAL DATABASES LIKE MS SQL SERVER, ORACLE SERVER AND MYSQL.
+
+20) WHAT IS THE ORDER OF EXECUTION OF GROUP BY, ORDER BY, WHERE AND HAVING?
+         •THE ORDER OF EXECUTION IS WHERE, GROUP BY, HAVING AND THEN ORDER BY.
+
+21) DIFFERENCE BETWEEN SQL AND PL/SQL?
+        SQL IS NOT A PROGRAMMING LANGUAGE BUT PL/SQL IS THE PROCEDURAL LANGUAGE. PL/SQL IS THE ENHANCED FORM OF SQL. 
+        IN PL/SQL, WE CAN PERFORM LOOP AND CONDITIONAL STATEMENTS. PL/SQL WAS DEVELOPED BY ORACLE
+
+22) What is CTE (Common Table Expression)?
+        CTE stands for Common Table Expression. CTE is like a temp table which will create in our current 
+        working database. The major advantage of CTE is to do recursive programming. 
+
+23) What is the difference between CTE and Temptable?
+       CTE will create in current working database and temp table creates in temp DB. 
+       You cannot able to do index on CTE table. You can do index in temp table.
+       Temp table is preferable than CTE.  
+       CTE will not be available in consecutive query but temp table will be available in entire connection.
+
+24) CAN WE USE USER DEFINED FUNCTIONS IN SELECT STATEMENTS?
+        YES, WE CAN USE USER DEFINED FUNCTIONS IN SELECT STATEMENTS.
+
+25) CAN WE USE DML STATEMENTS IN USER DEFINED FUNCTIONS?
+        NO, WE CAN'T ABLE TO USE DML STATEMENTS IN FUNCTIONS. WE CAN ONLY ABLE TO USE SELECT STATEMENT IN A FUNCTION.
+
+26) What is Composite key?
+        Composite key is the combination of two or more column in a table which make each row in a table unique.
+
+27) What are Triggers?
+		Triggers are the special stored procedure which executes automatically when insert, update, delete operation happens on the table. Triggers will reduce the db performance.
+
+28) CAN WE USE A FUNCTION IN SELECT STATEMENT?
+	YES, WE CAN USE FUNCTION IN SELECT STATEMENT. WE CAN WRITE SOME COMPLEX QUERIES TO A FUNCTION AND REFER IT IN WHERE CONDITION OF A QUERY WHICH WILL IMPROVE THE PERFORMANCE OF YOUR QUERY. WHICH ALSO REDUCES THE DUPLICATION OF TE QUERY
+	
+29)What is subquery?
+	subquery are the query within a query.
+	subquery executes first and then the outer query will executes. Based on the results of the subquery,  outer query will perform.
+		ex: select empname from emp where locationid = (select locationid from location where location = 'Chennai')
+		
+30) what are the disadvantages of subquery?
+	subquery reduces the performance of the query. It's always advisable to use joins instead of subquery.
+	
+31) how to retrieve data based on a pattern match?
+	we can use 'like' to do pattern match
+	ex: select empname from  employee where empname like 'bal%'
+	
+	Since percentage symbol is at-last, it will retrieve data starts with bal. If I pust '%' at first position, the query will retrieve data ends with bal.
+	Similarly we can also use the percentile '%' symbol at middle.
+
+32) DIFFERENCE BETWEEN TRUNCATE AND DROP?
+	TRUNCATE WILL REMOVE ALL THE RECORDS IN A TABLE AND THE TABLE STRUCTURE REMAINS UNCHANGED.
+	DROP WILL REMOVE THE TABLE FROM THE DATABASE. BOTH THE COMMANDS CAN'T BE ROLL-BACK.
+	
+33) how to add a column to an existing table?
+	alter table emp add address varchar(100);
+
+34) how to delete a column to an existing table?
+	alter table emp drop column address 
+	
+35) what is default constraint?
+	default constraint are set at column level. this constraint will set the default value to the record if we haven't provided the data for that particular column on which the default constraint sets.
+	
+	ex: alter table emp alter column salary set default '10000'
+	
+	the  above query will set the default emp salary to 10000. when you adding a new employee to table the default value to salary column in 10000.
+
+36) what is check constraint?
+	Check constraint used to check for some condition before the value get inserted into an column.
+	the check constraint works like a "IF" condition in programming. It limits the data range.
+	
+	ex: alter table emp add constraint chk check age<40;
+	the above query let you to insert data in age column only when the age is lesser than 40.
+	
+37) what is not null constraint?
+	if the column is set to not null constraint, then the column must have value it won't accept null value.
+	
+38) what is unique constraint?
+	unique constraint make sure that each row of a column must have a unique value that make the record unique.
+	
+39) HOW TO DECLARE A VARIABLE IN SQL SERVER/
+	DECLARE @MY_VAR VARCHAR(10) = NULL
+	
+	IN THE ABOVE LINE, I'VE DECLARED A VARIABLE CALLED @MY_VAR WHICH IS OF TYPE VARCHAR WHICH HAS 10 BYTE OF MEMORY AND I SET DEFAULT TO NULL.
+	
+40) what are the mode of authentications in SQL server?
+	Windows authentications and SQL server authentications.
+
+41) What is database lock?
+	database locks are applied on table's data level we can  using a transaction to avoid such a situation of accessing same data by two different users.
+		
+42) What are te types of database lock?
+	there are two types of database lock.
+		1) Shared lock
+			shared lock is also called as read lock. when two users concurrently access the same record only one user can able to edit the record 
+			and other user can only able to read (which is in read only mode) the data.
+		2) Exclusive lock
+				when execusive lock is applied on a data. that can't be edit or view by any other transactions.
+				
+43) What is transaction and when to use it?
+		* A transaction is a set of statements. transaction passess when all the statements are passed otherwise fails totally. 
+		* if any statement in the trasactions get failed, then previously DB affected changes are get rollback to it's original position.
+		* a trasaction can use when two different works are going to heppen one by one. consider an example, transferring mony from one account to another account.
+		ex: 
+			begin try	
+				begin transaction
+					--A set of statements
+				commit	
+			end try
+			begin catch	
+				rollback
+			end catch
+			
+44) what is acid property?
+	the most important interview question is ACID property in transaction.
+	Atomic: the transaction should pass or fail in whole. it won't be in half done
+	Consistency: transaction should create a valid state of data or the returns to its previous state of data
+	Isolation: one transaction should not interact / disturb another transation.
+	Durability: once after the successfull transaction data in all the table should be related. once after fail, the tables data should revert ack to it's original states.
+	
+45) what is nested trasaction?
+	a separate transaction present inside another transaction.
+	ex: 
+			begin try	
+				-- outer transaction
+				begin transaction 
+					--A set of statements
+					-- transaction inside another trasaction
+					begin transaction
+						-- set of statements
+					commit transaction
+				commit	
+			end try
+			begin catch	
+				rollback
+			end catch
+			
+46) what is COALESCE function?
+		Coalesce function return the first not null value of the column referred in select query.
+		
+47) how to use case in query?
+		we can use case statement in select query.
+		ex: select case when column_name is null then 'A' else 'B' end as some_query from sampletable
+		
+48) CAN WE USE CASE IN DML STATEMENTS?
+		NO, WE CAN'T ABLE TO USE CASE STATEMENT IN DML QUERIES 
+		
+49) WHAT IS NATURAL JOIN?
+		NATURAL JOIN WILL NOT COMES UNDER COMMON JOIN TYPES. IT'S WORKS BASED ON THE COMMON COLUMN PRESENT WITHIN THE TWO TABLES WITH SAME DATATYPE.
+		
+50) WHAT IS CROSS JOIN?
+		WHEN JOINING TWO TABLE IF WE HAVNT PROVIDED ANY WHERE CONDITION, THEN IT WILL RETURN THE PRODUCT OF THE TWO TABLES. CROSS JOIN IS ALSO CALLED AS CARTESIAN JOIN.
+		EX: WE WE JOIN TWO TABLES CALLED TABLE A AND TABLE B. TABLE A HAS 3 COLUMN AND TABLE B HAS 120 COLUMN. THEN THE CROSS JOIN WILL PROVIDE OUTPUT LIKE 3 * 120  = 360 ROWS.
+		
+51) WHAT IS DIFFERENCE BETWEEN LEFT OUTER JOIN AND RIGHT OUTER JOIN?
+		* LEFT OUTER JOIN AND RIGHT OUTER JOIN ARE THE TYPES OF OUTER JOIN.
+		* LEFT JOIN WILL RETURN ALL THE RECORD FROM THE LEFT TABLE AND ONLY THE MATCHED RECORD FROM THE RIGHT TABLE. LIKEWISE, RIGHT OUTER JOIN RETURN ALL RECORD FROM RIGHT TABLE AND ONLY THE MATCHED RECORD FROM THE LEFT TABLE.
+		
+52)	WILL THE TRUNCATE AND DROP TABLE COMMAND CAN REVOKE?
+		NO, THIS OPERATIONS CAN'T BE REVOKED.
+		
+53) WHAT IS FULL OUTER JOIN?
+		ALL THE RECORDS FROM BOTH THE RIGHT AND LEFT TABLE GETS RETURNED EVEN IF THERE IS NO MATCH RECORD.
+
+54) what are the different types of pattern matches?
+		* we have seen pattern match with like 
+		* we can use '_' (underscore) for single character search.
+			ex: select name from sites where sitename like '_uvi%'
+		* 	we can use charlist to search multiple datas.
+			ex: select city from states where statename like '[cba]%'
+			
+55) WHAT IS SEQUEL?, WHAT IS SQL?, AND WHAT IS THE DIFFERENCE/
+		* SQL AND SEQUEL ARE SAME.
+		* SEQUEL IS THE EARLIER NAME OF SQL. BUT, STILL WE CAN SEE MANY PEOPLE'S ARE USING THIS NAME.
+		* SEQUEL NAME CHANGED TO SQL BY REMOVING THE VOWELS. BECAUSE, AN AIRCRAFT COMPANY  REGISTERED SEQUEL AS TRADEMARK.
+
+56) HOW A SQL QUERY GETS EXECUTES?
+		WHEN A SQL QUERY IS GIVEN TO SERVER, THE PARSER RECEIVES IT THEN PARSE THE QUERY AND THEN TE PARSED QUERY WILL SEND TO OPTIMIZER TO CREATE A EXECUTION PLAN.
+		BASED ON THE EXECUTION PLAN, THE SQL QUERY GETS EXECUTES AND THE RESULT SET WILL PRODUCE.
+		
+		NOTE: THE MAIN WORK OF THE PARSER IS TO CHECK THE SQL QUERY SYNTATICALLY WITH THE SQL GRAMMER RULES AND ALSO ALLOCATE SPACE IN MEMORY TO EXECUTE THE QUERY.
+		
+57) What is stored procedures?
+		* stored procedure is a batch of scripts which gets executes at a time.
+		* stored procedure accepts input parameters.
+		* SP increases the performance. Because once the stored procedure was successfully compiled an execution plan also get prepared. each time when we call the SP, it won't compile again until and unless the SP gets changed.
+		* SP nesting level is limited to 32 
+		* but we can use as many number of stored procedure as you want.
+		* SP will prevent the SQL injection attack.
+		
+58) What are the types of Stored Procedures?
+		* there are four types of stored procedure
+			* system defined strored procedure
+			* user defined stored procedure
+			* extended stored procedure
+			* CLR stored Procedure
+			
+59) what is system stored procedure and user defined stored procedure?
+		* System stored procedures are predefined which has come from SQL server itself. Below are the sample system stored procedures.
+			for ex: sp_helptext, sp_depends, sp_executesql, sp_rename 
+		* User defined stored procedure are written by users for their own purpose. below is the basic syntax.
+			create proc or procedure sp_sampleprocedure
+			 -- input parameters if any ex: @my_var int 
+			 as 
+			 begin
+				-- your query.
+			 end
+			 
+60) what is extended stored procedure?
+		 * extended stored procedures are starts with xp_ as prefix. It provide an interface with external programs. this extended stored procedures are stored under master database. ex: program from C program.
+		 
+		 NOTE: Microsoft likely to remove the extended stored procedure. instead they let us to use CLR stored procedure.
+		
+61) what is CLR stored Procedure?
+		* The CLR stored procedures are CLR supported. the procedures can be written in any of the .net supported programming languages like C#, VB, F#. 	
+		* The method should be public static. if the return type is void then default return to 0.
+		
+62) What is recursive stored procedure?
+		* a stored procedure gets called again again untill the desired output obtain. Default recursive is deactivated 
+		
+63) can we return null values from SP?
+		* we cant able to return null values from SP instead we can return 0.
+		
+64) can we use output variable in SP?
+		* yes, we can use.
+	
+65) how to handle error in SP?
+		we can use try catch block to handle exceptions. SQL server itself stored error in a table called sys.messages
+		
+66) can we use transaction in SP?
+		yes we can use transaction in SP's. it's advisable to use transaction minimally. try to avoid complex transaction which will affect the performance. It's good practive to use transaction within the try catch block.
+		
+67) can a SP accept both input and output parameters?
+		* Sp accept input and output parameters. a max of 1024 values.
+		
+68) WHAT IS DATABASE?
+	* IT’S A COLLECTION OF DATA
+	* ORGANIZED IN A FORMAT SUCH THAT IT’LL BE EASY TO MANIPULATE
+	* SQL IS USED TO COMMUNICATE WITH DATABASE
+	* DBMS – AN APPLICATION WHICH IS USED TO MAINTAIN THE DATA IN DATABASE.
+		EX: MICROSOFT SQL SERVER, ORACLE, SYSBASE 
+
+69) DIFFERENCE BETWEEN DBMS VS RDBMS
+	DBMS
+		* DBMS – DATABASE MANAGEMENT SYSTEM
+		* DATA’S ARE STORED IN FILE SYSTEM (MAY BE IN TABLE) BUT THERE IS NO RELATIONSHIP BETWEEN FILES OR TABLES.
+		* DATA STORED IN HIERARCHICAL FORM OR A TREE FORM
+		* THERE IS NO ACID PROPERTY – SECURITY, TRANSACTION
+	RDBMS
+		* RDBMS – RELATIONAL DATABASE MANAGEMENT SYSTEM
+		* DATA’S ARE STORED IN TABLE FORM
+		* ALL THE TABLE HAVE RELATIONSHIP BETWEEN THEM
+		* RELATIONSHIPS ARE CREATED BY MEANS OF KEYS
+		* WE HAVE ACID PROPERTY
+		* WE HAVE NORMALIZATION
+
+70) WHAT IS THE DIFFERENCE BETWEEN AGGREGATE FUNCTIONS AND ARTHIMATIC OPERATION
+		* WHEN DOING CALCULATIONS USING PREDEFINED FUNCTIONS IS CALLED AGGREGATE FUNCTION.
+		* WHEN DOING CALCULATIONS USING ARTHIMATIC OPERATORS IS CALLED ARTHIMATIC OPERATION.
+		
+71) WHTAT IS THE DIFFEREMCE BETWEEN PLSQL VS TSQL
+		* PLSQL  - PROCEDURAL STRUCTURED QUERY LANGUAGE
+		* PLSQL WAS EXTENDED FROM SQL WITH MANY FEATURES LIKE DECLARING VARIABLE, SP, FUNCTION, ERROR HANDLING.			
+		* WHICH WAS DEVELOPED BY ORACLE.		
+		* TSQL – TRANSACT STRUCTURED QUERY LANGUAGE
+		* THIS ALSO EXTENDED FROM SQL AS LIKE PLSQL.
+		* WHICH WAS DEVELOPED BY MICROSOFT
+
+		
+72) WHAT IS THE DIFFERENCE BETWEEN MYSQL VS SQL VS SQL SERVER
+		* SQL IS NOT A SERVER. IT TELLS PROCEDURES TO WRITE QUERIES WHICH COMMUNICATE WITH RDBMS.
+		
+	MYSQL 
+		* MYSQL IS THE RDBMS WHICH IS OPEN SOURCE AND INTEROPERABILITY.
+		* MYSQL IS CUSTOMIZABLE – EXISTING FUNCTIONALITY.
+		* MOSTLY USING IN WEB DEVELOPMENT. 
+		* VERY FRIENDLY TO PHP
+	SQL SERVER
+		* MS SQL SERVER IS THE MICROSOFT PRODUCT WHICH IS PAID VERSION
+		* IT’S ALSO A RDBMS. SUPPORTS ONLY WINDOWS. PLATFORM DEPENDENT, ALSO HAS COMMAND PROMPT INTERACTION.
+		* VERY FRIENDLY WITH MICROSOFT TECHNOLOGIES.
+		* HAS WORKSTATION COMPONENT AND SERVER COMPONENT
+
+73) WHAT IS THE DIFFERENCE BETWEEN SQL VS SEQUEL
+	* SEQUEL IS THE HISTORIC NAME OF THE SQL
+	* REGISTERED TRADEMARK OF A AMERICA BASED AEROSPACE COMPANY
+	* REMOVED VOWELS AND MADE IT AS SQL 
+	* SQL IS NOT THE SERVER.
+	* SQL IS THE STRUCTURED QUERY LANGUAGE WHICH LET YOU TO SPEAK WITH RDBMS. 
+	
+74) WHAT IS  SQL?
+	* IT’S NOT A SERVER. SQL IS A SCRIPTING LANGUAGE TO SPEAK WITH RDBMS.	
+	* SQL CALLED STRUCTURED QUERY LANGUAGE
+	* SQL GIVES YOU PROCEDURES TO WRITE QUERIES WHICH LET YOU TO COMMUNICATE WITH RDBMS.
+	* RDBMS LIKE ORACLE, MS SQL SERVER, IBM, SYBASE USE SQL
+	* COMMON FUNCTIONALITY LIKE SELECT, INSERT, UPDATE, DELETE, CREATE, DROP ETC.
+	
+75) WHAT IS PARSER, QUERY OPTIMIZER AND EXECUTION PLAN?
+		WHEN QUERY TO SUBMITTED TO EXECUTE IT WONT GET EXECUTES AS GIVEN.
+		PARSER WILL CHECK ATHE GRAMMER AND SYNTAX. IF THE QUERY IS WELL FORMED THEN PARSE TREE GETS CREATED AND QUERY OPTIMIZER WILL COME INTO PICTURE. QUERY OPTIMIZER USES THE PARSE TREE GENERATED BY PARSER AND DECIDES HOW TO EXECUTE THE QUERY LIKE WHICH WAY IS BEST WHICH WAY CAN IMPROVE THE PERFORMANCE OF TE CPU.
+		FINALLY, QUERY OPTIMIZER GIVES EXECUTION PLAN TO THE STORAGE ENGINE WHICH GETS EXECUTED START AWAY.
+		
+		
+76) find the nth salary in the list? with predefined function, without function
+
+* select * from dbo.CUSTOMERs
+* select top 2 * from dbo.CUSTOMERS
+* select ROW_NUMBER()over(order by salary) as test, * from dbo.CUSTOMERS
+* select ROW_NUMBEt(tover(partition by salary order by salary), * from dbo.CUSTOMERS
+ *select * from (select ROW_NUMBER()over(order by salary) as row_num, * from dbo.CUSTOMERS) b where b.row_num <= 2
+* SELECT name, salary, (SELECT COUNT(*)  FROM CUSTOMERS cust WHERE o.name <= cust.name
+) row_num FROM customers o order by row_num
+
+77) 
