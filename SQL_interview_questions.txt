@@ -79,3 +79,21 @@
 	Stored procedures can encapsulate logic. You can change stored procedure code without affecting clients.
 	Stored procedures provide better security to your data.	
 	
+	
+19) What is an Index?
+	An index refers to a performance tuning method of allowing faster retrieval of records from the table. An index creates an entry for each value and hence it will be 		faster to retrieve data.
+	
+20)Explain different types of index.
+	There are three types of index namely:
+
+	Unique Index:
+	This index does not allow the field to have duplicate values if the column is unique indexed. If a primary key is defined, a unique index can be applied automatically.
+
+	Clustered Index:
+	This index reorders the physical order of the table and searches based on the basis of key values. Each table can only have one clustered index.
+
+	Non-Clustered Index:
+	Non-Clustered Index does not alter the physical order of the table and maintains a logical order of the data. Each table can have many nonclustered indexes.
+
+21)What is subquery in SQL?
+	A subquery is a query inside another query where a query is defined to retrieve data or information back from the database. In a subquery, the outer query is called as 	the main query whereas the inner query is called subquery. Subqueries are always executed first and the result of the subquery is passed on to the main query. It can be 	nested inside a SELECT, UPDATE or any other query. A subquery can also use any comparison operators such as >,< or =.
